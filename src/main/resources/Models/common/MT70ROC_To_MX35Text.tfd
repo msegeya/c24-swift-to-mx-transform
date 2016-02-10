@@ -1,0 +1,95 @@
+<?xml version="1.0" ?>
+<transform IOversion="3.1.0" readOnly="false" encrypted="false" targetNamespace="http://www.c24.biz/IO/Transforms/Common" processingOrder="Outputs" validateInputs="false" validateOutputs="false" saveLayout="true" name="MT70ROC_To_MX35Text.tfd">
+  <input endID="0" modelRef="../SWIFT FIN November 2015 Data Dictionary.dod" typeRef="Data Field Dictionary/Subfields/Details of Payment" path="" required="true"></input>
+  <contextPath input="true" endID="0" contextRef="Line 35x" id="O000000000010100"></contextPath>
+  <contextPath input="false" endID="0" contextRef="" id="O000"></contextPath>
+  <transformMethod name="SUBSTRING" x="713" y="90" id="O00000"></transformMethod>
+  <javaMethodRef refId="extractROC_O0000000" x="509" y="104" id="O0000000"></javaMethodRef>
+  <transformMethod name="CONCAT" x="367" y="102" id="O000000000"></transformMethod>
+  <transformMethod name="CONCAT" x="229" y="49" id="O00000000000"></transformMethod>
+  <transformMethod name="INSTANCE" x="103" y="29" id="O0000000000000"></transformMethod>
+  <constant constant="0" id="O000000000000001"></constant>
+  <transformMethod name="INSTANCE" x="104" y="85" id="O0000000000001"></transformMethod>
+  <constant constant="1" id="O000000000000101"></constant>
+  <transformMethod name="CONCAT" x="231" y="174" id="O00000000001"></transformMethod>
+  <transformMethod name="INSTANCE" x="105" y="146" id="O0000000000100"></transformMethod>
+  <constant constant="2" id="O000000000010001"></constant>
+  <transformMethod name="INSTANCE" x="104" y="206" id="O0000000000101"></transformMethod>
+  <constant constant="3" id="O000000000010101"></constant>
+  <constant constant="0" id="O0000001"></constant>
+  <constant constant="35" id="O0000002"></constant>
+  <translation inputID="O00000" inputPort="0" outputID="O000" outputPort="0"></translation>
+  <translation inputID="O0000000" inputPort="0" outputID="O00000" outputPort="0"></translation>
+  <translation inputID="O000000000" inputPort="0" outputID="O0000000" outputPort="0"></translation>
+  <translation inputID="O00000000000" inputPort="0" outputID="O000000000" outputPort="0"></translation>
+  <translation inputID="O0000000000000" inputPort="0" outputID="O00000000000" outputPort="0"></translation>
+  <translation inputID="O000000000010100" inputPort="0" outputID="O0000000000000" outputPort="0"></translation>
+  <translation inputID="O000000000000001" inputPort="0" outputID="O0000000000000" outputPort="1"></translation>
+  <translation inputID="O000000000010100" inputPort="0" outputID="O0000000000001" outputPort="0"></translation>
+  <translation inputID="O000000000000101" inputPort="0" outputID="O0000000000001" outputPort="1"></translation>
+  <translation inputID="O0000000000001" inputPort="0" outputID="O00000000000" outputPort="1"></translation>
+  <translation inputID="O0000000000100" inputPort="0" outputID="O00000000001" outputPort="0"></translation>
+  <translation inputID="O000000000010100" inputPort="0" outputID="O0000000000100" outputPort="0"></translation>
+  <translation inputID="O000000000010001" inputPort="0" outputID="O0000000000100" outputPort="1"></translation>
+  <translation inputID="O000000000010100" inputPort="0" outputID="O0000000000101" outputPort="0"></translation>
+  <translation inputID="O000000000010101" inputPort="0" outputID="O0000000000101" outputPort="1"></translation>
+  <translation inputID="O0000000000101" inputPort="0" outputID="O00000000001" outputPort="1"></translation>
+  <translation inputID="O00000000001" inputPort="0" outputID="O000000000" outputPort="1"></translation>
+  <translation inputID="O0000001" inputPort="0" outputID="O00000" outputPort="1"></translation>
+  <translation inputID="O0000002" inputPort="0" outputID="O00000" outputPort="2"></translation>
+  <documentation>
+    <notes>&lt;h3&gt;MT70ROC_To_MX35Text&lt;/h3&gt;
+
+&lt;b&gt;Business description&lt;/b&gt;
+The function isolates the string that follows a code /ROC/ in an MT remittance information field 70 and restricts the output string to maximum 35 characters.
+
+&lt;b&gt;Format&lt;/b&gt;
+MT70ROC_To_MX35Text(MT70 ; MX35Text)
+
+&lt;b&gt;Input&lt;/b&gt;
+MT70: remittance information in an MT field 70 (format 4*35x).
+
+&lt;b&gt;Output&lt;/b&gt;
+MX35Text: string of characters in the MX message typed Max35Text.
+
+&lt;b&gt;Preconditions&lt;/b&gt;
+None.
+
+&lt;b&gt;Formal description&lt;/b&gt;
+&lt;pre&gt;
+/* MT70 is defined by 4 lines of 35 characters */
+/*
+   Basic function ExtractBetweenPattern extracts the information between the code /ROC/ and one of the other available codes in
+   field 70: /INV/, /RFB/ and /IPI/. If none of these codes is encountered, the output string will be the information following
+   /ROC/ until the end of field 70. If the information is spread over more than one line, then the function removes the MT line
+   separator "CRLF". MT70ROC is a local variable
+*/
+MT70ROC = ExtractBetweenPatterns(MT70, “/ROC/”, {“/INV/”, “/IPI/”, “/RFB/”})
+/* Limit the output string to 35 characters */
+MX35Text = Substring(MT70ROC, 1, 35)
+&lt;/pre&gt;</notes>
+  </documentation>
+  <output endID="0" typeRef="#string" path="" required="false"></output>
+  <javaMethod id="extractROC_O0000000">
+    <libraryMethod>false</libraryMethod>
+    <methodName>extractROC</methodName>
+    <input role="text" type="#string"></input>
+    <output type="#string"></output>
+    <code>if (null != text) {
+    int start = text.indexOf("/ROC/");
+    if (0 &lt;= start) {
+        final String[] terms = new String[] {"/INV/", "/RFB/", "/IPI/"};
+        int end = text.length();
+        for (int i = terms.length; i--&gt;0;) {
+            int pos = text.indexOf(terms[i]);
+            if (0 &lt; pos &amp;&amp; pos &lt; end) {
+                end = pos; 
+            }
+        }
+        return text.substring(start + "/ROC/".length(), end);
+    }
+}
+return null;
+        </code>
+  </javaMethod>
+</transform>

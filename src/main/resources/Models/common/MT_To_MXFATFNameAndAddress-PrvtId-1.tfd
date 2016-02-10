@@ -1,0 +1,142 @@
+<?xml version="1.0" ?>
+<transform IOversion="3.1.0" readOnly="false" encrypted="false" targetNamespace="http://www.c24.biz/IO/Transforms/Common" processingOrder="Outputs" validateInputs="false" validateOutputs="true" saveLayout="true" name="MT_To_MXFATFNameAndAddress-PrvtId-1.tfd">
+  <input endID="0" typeRef="#string" path="" required="false"></input>
+  <input endID="1" modelRef="../SWIFT FIN November 2015 Data Dictionary.dod" typeRef="Data Field Dictionary/Subfields/Name And Address 50F" path="" required="true"></input>
+  <contextPath input="true" endID="0" contextRef="" id="O0020000010001000000"></contextPath>
+  <contextPath input="true" endID="1" contextRef="" id="O002000001000101"></contextPath>
+  <contextPath input="false" endID="0" contextRef="" id="O000"></contextPath>
+  <globalTransformRef ref="MT_To_MXDate.tfd" x="1123" y="36" id="O00000"></globalTransformRef>
+  <transformMethod name="DATEFROMSTRING" x="959" y="39" id="O0000000"></transformMethod>
+  <transformMethod name="IF" type="#string" x="762" y="35" id="O000000000"></transformMethod>
+  <transformMethod name="EXISTS" x="667" y="23" id="O00000000000"></transformMethod>
+  <transformMethod name="FIRST" x="557" y="23" id="O002000001"></transformMethod>
+  <transformMethod name="XPATH" type="#string" x="465" y="30" id="O00200000100"></transformMethod>
+  <constant constant="./NameAndAddressSubfield2[NameAndAddressNumCode=5]/NameAndAddressDetails" id="O0020000010000"></constant>
+  <transformMethod name="IF" model="../SWIFT FIN November 2015 Data Dictionary.dod" type="Data Field Dictionary/Subfields/Name And Address 50F" x="298" y="70" id="O0020000010001"></transformMethod>
+  <transformMethod name="NOT" x="193" y="28" id="O002000001000100"></transformMethod>
+  <transformMethod name="EQUALS" x="102" y="28" id="O00200000100010000"></transformMethod>
+  <constant constant="IBEI" id="O0020000010001000001"></constant>
+  <constant constant="null" id="O002000002"></constant>
+  <transformMethod name="FIRST" x="558" y="139" id="O00200000000"></transformMethod>
+  <transformMethod name="XPATH" type="#string" x="458" y="138" id="O0020000000000"></transformMethod>
+  <constant constant="./NameAndAddressSubfield2[NameAndAddressNumCode=4]/NameAndAddressDetails" id="O002000000000000"></constant>
+  <constant constant="yyyyMMdd" id="O000000001"></constant>
+  <contextPath input="false" endID="1" contextRef="" id="O001"></contextPath>
+  <transformMethod name="SUBSTRING" x="980" y="198" id="O00100"></transformMethod>
+  <transformMethod name="IF" type="#string" x="809" y="243" id="O0020000"></transformMethod>
+  <transformMethod name="EXISTS" x="676" y="137" id="O002000000"></transformMethod>
+  <constant constant="3" id="O0010001"></constant>
+  <constant constant="38" id="O0010002"></constant>
+  <contextPath input="false" endID="2" contextRef="" id="O002"></contextPath>
+  <transformMethod name="SUBSTRING" x="978" y="282" id="O00200"></transformMethod>
+  <constant constant="0" id="O0020001"></constant>
+  <constant constant="2" id="O0020002"></constant>
+  <translation inputID="O00000" inputPort="0" outputID="O000" outputPort="0"></translation>
+  <translation inputID="O0000000" inputPort="0" outputID="O00000" outputPort="0"></translation>
+  <translation inputID="O000000000" inputPort="0" outputID="O0000000" outputPort="0"></translation>
+  <translation inputID="O00000000000" inputPort="0" outputID="O000000000" outputPort="0"></translation>
+  <translation inputID="O002000001" inputPort="0" outputID="O00000000000" outputPort="0"></translation>
+  <translation inputID="O00200000100" inputPort="0" outputID="O002000001" outputPort="0"></translation>
+  <translation inputID="O0020000010000" inputPort="0" outputID="O00200000100" outputPort="0"></translation>
+  <translation inputID="O002000001000100" inputPort="0" outputID="O0020000010001" outputPort="0"></translation>
+  <translation inputID="O00200000100010000" inputPort="0" outputID="O002000001000100" outputPort="0"></translation>
+  <translation inputID="O0020000010001000000" inputPort="0" outputID="O00200000100010000" outputPort="0"></translation>
+  <translation inputID="O0020000010001000001" inputPort="0" outputID="O00200000100010000" outputPort="1"></translation>
+  <translation inputID="O002000001000101" inputPort="0" outputID="O0020000010001" outputPort="1"></translation>
+  <translation inputID="O002000002" inputPort="0" outputID="O0020000010001" outputPort="2"></translation>
+  <translation inputID="O0020000010001" inputPort="0" outputID="O00200000100" outputPort="1"></translation>
+  <translation inputID="O0020000000000" inputPort="0" outputID="O00200000000" outputPort="0"></translation>
+  <translation inputID="O002000000000000" inputPort="0" outputID="O0020000000000" outputPort="0"></translation>
+  <translation inputID="O0020000010001" inputPort="0" outputID="O0020000000000" outputPort="1"></translation>
+  <translation inputID="O00200000000" inputPort="0" outputID="O000000000" outputPort="1"></translation>
+  <translation inputID="O002000002" inputPort="0" outputID="O000000000" outputPort="2"></translation>
+  <translation inputID="O000000001" inputPort="0" outputID="O0000000" outputPort="1"></translation>
+  <translation inputID="O00100" inputPort="0" outputID="O001" outputPort="0"></translation>
+  <translation inputID="O0020000" inputPort="0" outputID="O00100" outputPort="0"></translation>
+  <translation inputID="O002000000" inputPort="0" outputID="O0020000" outputPort="0"></translation>
+  <translation inputID="O00200000000" inputPort="0" outputID="O002000000" outputPort="0"></translation>
+  <translation inputID="O002000001" inputPort="0" outputID="O0020000" outputPort="1"></translation>
+  <translation inputID="O002000002" inputPort="0" outputID="O0020000" outputPort="2"></translation>
+  <translation inputID="O0010001" inputPort="0" outputID="O00100" outputPort="1"></translation>
+  <translation inputID="O0010002" inputPort="0" outputID="O00100" outputPort="2"></translation>
+  <translation inputID="O00200" inputPort="0" outputID="O002" outputPort="0"></translation>
+  <translation inputID="O0020000" inputPort="0" outputID="O00200" outputPort="0"></translation>
+  <translation inputID="O0020001" inputPort="0" outputID="O00200" outputPort="1"></translation>
+  <translation inputID="O0020002" inputPort="0" outputID="O00200" outputPort="2"></translation>
+  <documentation>
+    <notes>&lt;h3&gt;MT_To_MXFATFNameAndAddress-PrvtId-1&lt;/h3&gt;
+&lt;b&gt;(substitution of MT_To_MXFATFNameAndAddress)&lt;/b&gt;
+
+&lt;b&gt;Business description&lt;/b&gt;
+Subfield 2 of an MT field 50F identifies the Ordering Customer in line with FATF Special Recommendation VII by combining:
+&lt;ul&gt;
+&lt;li&gt;name and address&lt;/li&gt;
+&lt;li&gt;name and date and place of birth&lt;/li&gt;
+&lt;li&gt;name and national identity number&lt;/li&gt;
+&lt;li&gt;name and customer number&lt;/li&gt;
+&lt;/ul&gt;
+Every line in Subfield 2 of field 50F starts with a number indicating the type of information provided. This function translates the structured information in the MT to MX FATF compliant equivalents by:
+&lt;li&gt;checking the numbers to determine the MX target element&lt;/li&gt;
+&lt;li&gt;checking whether numbers are repeated if allowed by the format description on the&lt;/li&gt;
+following line. If so, the information following the number will be completed prior to the translation.
+
+&lt;b&gt;Note&lt;/b&gt;. This substitution of MT_To_MXFATFNameAndAddress for MT to the Data&amp;Place of Birth translation only. All rest part of functional implemented in MT_To_MXFATFNameAndAddress-PstlAddr-2.tfd.
+
+
+&lt;b&gt;Format&lt;/b&gt;
+MT_To_MXFATFNameAndAddress-PrvtId(MTPartyIdentifier, MTNameAndAddress ; MXFATFId)
+
+&lt;b&gt;Input&lt;/b&gt;
+&lt;tt&gt;MTPartyIdentifier&lt;/tt&gt;: Subfield 1 of field 50F carrying an account number or other FATF compliant customer identification
+&lt;tt&gt;MTNameAndAddress&lt;/tt&gt;: Subfield 2 of field 50F carrying an FATF compliant customer name and address or identifications in line with the format description of field 50F (date and place of birth, customer number or national identity number).
+
+&lt;b&gt;Output&lt;/b&gt;
+&lt;tt&gt;DateOfBirth&lt;/tt&gt;: the result of translation of the Date of Birth present on line starting with “4/”.
+&lt;tt&gt;TownName&lt;/tt&gt;: the result of translation of the town present on line starting with “5/” (before slash).
+&lt;tt&gt;CountryCode&lt;/tt&gt;: the result of translation of the country code present on line starting with “5/” (after slash).
+
+&lt;b&gt;Preconditions&lt;/b&gt;
+MTNameAndAddress must carry the name of the ordering customer so at least one line must start with “1/”.
+
+&lt;b&gt;Formal description&lt;/b&gt;
+&lt;pre&gt;
+/*
+  The section below describes the translation of date and place of birth (lines starting with “4/” and “5/”), customer number
+  (lines starting with “6/”) or national identity number (lines starting with “7/”). These translations are subject to the
+  presence of the code “IBEI” in the PartyIdentifier of field 50F (subfield 1): a code “IBEI” translates to the
+  Identification.OrganisationIdentification element, ruling out any translation towards the
+  Identification.PrivateIdentification element (target of date and place of birth, customer number or national identity
+  number translation) as both elements are mutually exclusive in the Identification element (“choice component”). If the
+  PartyIdentifier of field 50F carries a code different than “IBEI”, then date and place of birth, customer number and/or
+  national identity number -if the conditions for their translation are met- will translate to different instances of the
+  PrivateIdentification component
+*/
+IF Substring(MTPartyIdentifier, 1, 4) NOT = “IBEI”
+    /*
+       Translation of date and place of birth present on lines starting with “4/” and “5/”. As per field 50F format
+       specifications,”4/” must not be used without “5/” and vice versa, otherwise line(s) starting with “4/” or “5/” will
+       not be translated but ignored
+    */
+    /* Check whether “4/” is present in combination with “5/” by using the ExtractPattern and Length functions */
+    IF Length(ExtractPattern(MTNameAndAddress, “4/”)) &gt; 0 AND Length(ExtractPattern(MTNameAndAddress, “5/”)) &gt; 0
+        /*
+           Basic function ExtractLines extracts date and place of birth. “4/” and “5/” must not be repeated so the function
+           is used without continuation string to limit the extraction to a maximum of one line. If “4/” or “5/” are
+           repeated, then only their first occurrence is translated. MTDate and MTPlace are local variables. Substrings are
+           taken to delete “4/” and “5/” in the output strings
+        */
+        MTDate = Substring(ExtractLines(MTNameAndAddress, “4/”), 3)
+        MTPlace = Substring(ExtractLines(MTNameAndAddress, “5/”), 3)
+        /* Translated MTDate to the MX format and write in a next occurrence of the target PrivateIdentification component */
+        Identification.PrivateIdentification.DateAndPlaceOfBirth.BirthDate = MT_To_MXDate(MTDate)
+        /* Write country and city in the same occurrence of PrivateIdentification component as for the date */
+        Identification.PrivateIdentification.DateAndPlaceOfBirth.CountryOfBirth = Substring(MTPlace, 1, 2)
+        Identification.PrivateIdentification.DateAndPlaceOfBirth.CityOfBirth = Substring(MTPlace, 3)
+    ENDIF
+ENDIF
+&lt;pre&gt;</notes>
+  </documentation>
+  <output endID="0" typeRef="#date_date" path="" required="false"></output>
+  <output endID="1" typeRef="#string" path="" required="false"></output>
+  <output endID="2" typeRef="#string" path="" required="false"></output>
+</transform>

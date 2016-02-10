@@ -1,0 +1,111 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>biz.c24.io</groupId>
+    <artifactId>c24-swift-mt-to-mx</artifactId>
+    <name>C24 Swift MT to MX</name>
+    <packaging>jar</packaging>
+    <description>C24 Transforms Swift MT to Swift MX</description>
+    <version>0.0.2-SNAPSHOT</version>
+
+    <properties>
+        <c24.io.api.version>4.7.9</c24.io.api.version>
+        <c24.io.studio.version>4.7.7</c24.io.studio.version>
+        <c24.io.maven.version>4.7.1</c24.io.maven.version>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.7</java.version>
+    </properties>
+
+    <dependencies>
+
+
+        <!-- C24 API libraries -->
+        <dependency>
+            <groupId>biz.c24.io</groupId>
+            <artifactId>c24-io-api</artifactId>
+            <version>${c24.io.api.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>javax.servlet</groupId>
+                    <artifactId>servlet-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>        
+               
+        <dependency>
+	    	<artifactId>swift2015</artifactId>
+    		<groupId>biz.c24.io.swift</groupId>
+    		<version>0.0.2015</version>
+    		<scope>system</scope>
+    		<systemPath>${basedir}/src/main/resources/Generated/biz.c24.io.swift2015.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+	    	<artifactId>swift2015</artifactId>
+    		<groupId>biz.c24.io.swiftmx.transform.common</groupId>
+    		<version>0.0.2015</version>
+    		<scope>system</scope>
+    		<systemPath>${basedir}/src/main/resources/Generated/biz.c24.io.transforms.common.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+	    	<artifactId>swift2015</artifactId>
+    		<groupId>biz.c24.io.swiftmx.transform</groupId>
+    		<version>0.0.2015</version>
+    		<scope>system</scope>
+    		<systemPath>${basedir}/src/main/resources/Generated/biz.c24.io.transforms.swift.credittransfer.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+	    	<artifactId>swift2015</artifactId>
+    		<groupId>biz.c24.io.swiftmx</groupId>
+    		<version>0.0.2015</version>
+    		<scope>system</scope>
+    		<systemPath>${basedir}/src/main/resources/Generated/iso.std.iso.x20022.tech.xsd.pacs.x008.x001.x01.jar</systemPath>
+		</dependency>
+
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>c24-nexus</id>
+            <name>C24 Nexus</name>
+            <url>http://repo.c24io.net:8081/nexus/content/groups/public</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>c24-nexus</id>
+            <name>C24 Nexus</name>
+            <url>http://repo.c24io.net:8081/nexus/content/groups/public</url>
+        </pluginRepository>
+    </pluginRepositories>
+    <build>
+        <plugins>
+            <plugin>
+        		<groupId>org.codehaus.mojo</groupId>
+        		<artifactId>exec-maven-plugin</artifactId>
+        		<version>1.4.0</version>
+		        <executions>
+        			<execution>
+						<goals>
+				  			<goal>java</goal>
+						</goals>
+			  		</execution>
+				</executions>
+				<configuration>
+			  		<mainClass>biz.c24.io.Application</mainClass>
+			  		<!-- C24 generated Swift --> 
+			  		<additionalClasspathElements>
+						<additionalClasspathElement>${basedir}/src/main/resources/Generated/biz.c24.io.swift2015.jar</additionalClasspathElement>
+						<additionalClasspathElement>${basedir}/src/main/resources/Generated/biz.c24.io.transforms.common.jar</additionalClasspathElement>
+						<additionalClasspathElement>${basedir}/src/main/resources/Generated/biz.c24.io.transforms.swift.credittransfer.jar</additionalClasspathElement>
+						<additionalClasspathElement>${basedir}/src/main/resources/Generated/iso.std.iso.x20022.tech.xsd.pacs.x008.x001.x01.jar</additionalClasspathElement>
+					</additionalClasspathElements>	
+				</configuration>
+			</plugin>
+        </plugins>
+    </build>
+</project>

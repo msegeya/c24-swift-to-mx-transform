@@ -1,0 +1,163 @@
+<?xml version="1.0" ?>
+<transform IOversion="3.1.0" readOnly="false" encrypted="false" targetNamespace="http://www.c24.biz/IO/Transforms/Common" processingOrder="Outputs" validateInputs="false" validateOutputs="false" saveLayout="true" name="MT_To_MXFinancialInstitutionNameAndAddress.tfd">
+  <input endID="0" modelRef="../SWIFT FIN November 2015 Data Dictionary.dod" typeRef="Data Field Dictionary/Subfields/Party line1" path="" required="false"></input>
+  <input endID="1" modelRef="../SWIFT FIN November 2015 Data Dictionary.dod" typeRef="Data Field Dictionary/Subfields/Name and Address" path="" required="false"></input>
+  <contextPath input="true" endID="0" contextRef="" id="O011000000"></contextPath>
+  <contextPath input="true" endID="1" contextRef="" id="O011005100"></contextPath>
+  <contextPath input="true" endID="1" contextRef="Line 35x" id="O006000001"></contextPath>
+  <contextPath input="false" endID="0" contextRef="" id="O000"></contextPath>
+  <transformMethod name="IF" type="#string" x="619" y="39" id="O00000"></transformMethod>
+  <transformMethod name="AND" x="482" y="28" id="O0000000"></transformMethod>
+  <transformMethod name="NOT" x="289" y="28" id="O0050000"></transformMethod>
+  <transformMethod name="AND" x="228" y="79" id="O005000000"></transformMethod>
+  <transformMethod name="EXISTS" x="118" y="71" id="O00500000000"></transformMethod>
+  <localTransformRef refId="IsClearingSystem_O000000000000000" x="105" y="296" id="O0110000"></localTransformRef>
+  <transformMethod name="EXISTS" x="399" y="418" id="O00600000000"></transformMethod>
+  <globalTransformRef ref="MT_To_MXPostalAddress.tfd" x="230" y="195" id="O0110051"></globalTransformRef>
+  <constant constant="null" id="O0110002"></constant>
+  <contextPath input="false" endID="1" contextRef="" id="O001"></contextPath>
+  <transformMethod name="IF" type="#string" x="621" y="107" id="O00100"></transformMethod>
+  <contextPath input="false" endID="2" contextRef="" id="O002"></contextPath>
+  <transformMethod name="IF" type="#string" x="621" y="176" id="O00200"></transformMethod>
+  <contextPath input="false" endID="3" contextRef="" id="O003"></contextPath>
+  <transformMethod name="IF" type="#string" x="623" y="244" id="O00300"></transformMethod>
+  <contextPath input="false" endID="4" contextRef="" id="O004"></contextPath>
+  <transformMethod name="IF" type="#string" x="624" y="314" id="O00400"></transformMethod>
+  <contextPath input="false" endID="5" contextRef="" id="O005"></contextPath>
+  <transformMethod name="IF" type="#string" x="625" y="380" id="O00500"></transformMethod>
+  <contextPath input="false" endID="6" contextRef="" id="O006"></contextPath>
+  <transformMethod name="UNION" x="758" y="497" id="O00600"></transformMethod>
+  <transformMethod name="IF" type="#string" x="623" y="468" id="O0060000"></transformMethod>
+  <transformMethod name="NOT" x="492" y="416" id="O006000000"></transformMethod>
+  <transformMethod name="IF" type="#string" x="626" y="536" id="O0060001"></transformMethod>
+  <contextPath input="false" endID="7" contextRef="" id="O007"></contextPath>
+  <transformMethod name="IF" type="#string" x="628" y="605" id="O00700"></transformMethod>
+  <contextPath input="false" endID="8" contextRef="" id="O008"></contextPath>
+  <transformMethod name="IF" type="#string" x="629" y="674" id="O00800"></transformMethod>
+  <contextPath input="false" endID="9" contextRef="" id="O009"></contextPath>
+  <transformMethod name="IF" type="#string" x="629" y="745" id="O00900"></transformMethod>
+  <contextPath input="false" endID="10" contextRef="" id="O010"></contextPath>
+  <transformMethod name="IF" type="#string" x="630" y="815" id="O01000"></transformMethod>
+  <contextPath input="false" endID="11" contextRef="" id="O011"></contextPath>
+  <transformMethod name="IF" type="#string" x="630" y="884" id="O01100"></transformMethod>
+  <translation inputID="O00000" inputPort="0" outputID="O000" outputPort="0"></translation>
+  <translation inputID="O0000000" inputPort="0" outputID="O00000" outputPort="0"></translation>
+  <translation inputID="O0050000" inputPort="0" outputID="O0000000" outputPort="0"></translation>
+  <translation inputID="O005000000" inputPort="0" outputID="O0050000" outputPort="0"></translation>
+  <translation inputID="O00500000000" inputPort="0" outputID="O005000000" outputPort="0"></translation>
+  <translation inputID="O0110000" inputPort="0" outputID="O00500000000" outputPort="0"></translation>
+  <translation inputID="O011000000" inputPort="0" outputID="O0110000" outputPort="0"></translation>
+  <translation inputID="O0110000" inputPort="0" outputID="O005000000" outputPort="1"></translation>
+  <translation inputID="O0110051" inputPort="3" outputID="O00600000000" outputPort="0"></translation>
+  <translation inputID="O00600000000" inputPort="0" outputID="O0000000" outputPort="1"></translation>
+  <translation inputID="O011005100" inputPort="0" outputID="O0110051" outputPort="0"></translation>
+  <translation inputID="O0110051" inputPort="0" outputID="O00000" outputPort="1"></translation>
+  <translation inputID="O0110002" inputPort="0" outputID="O00000" outputPort="2"></translation>
+  <translation inputID="O00100" inputPort="0" outputID="O001" outputPort="0"></translation>
+  <translation inputID="O0050000" inputPort="0" outputID="O00100" outputPort="0"></translation>
+  <translation inputID="O0110051" inputPort="1" outputID="O00100" outputPort="1"></translation>
+  <translation inputID="O0110002" inputPort="0" outputID="O00100" outputPort="2"></translation>
+  <translation inputID="O00200" inputPort="0" outputID="O002" outputPort="0"></translation>
+  <translation inputID="O0050000" inputPort="0" outputID="O00200" outputPort="0"></translation>
+  <translation inputID="O0110051" inputPort="2" outputID="O00200" outputPort="1"></translation>
+  <translation inputID="O0110002" inputPort="0" outputID="O00200" outputPort="2"></translation>
+  <translation inputID="O00300" inputPort="0" outputID="O003" outputPort="0"></translation>
+  <translation inputID="O0050000" inputPort="0" outputID="O00300" outputPort="0"></translation>
+  <translation inputID="O0110051" inputPort="3" outputID="O00300" outputPort="1"></translation>
+  <translation inputID="O0110002" inputPort="0" outputID="O00300" outputPort="2"></translation>
+  <translation inputID="O00400" inputPort="0" outputID="O004" outputPort="0"></translation>
+  <translation inputID="O0050000" inputPort="0" outputID="O00400" outputPort="0"></translation>
+  <translation inputID="O0110051" inputPort="4" outputID="O00400" outputPort="1"></translation>
+  <translation inputID="O0110002" inputPort="0" outputID="O00400" outputPort="2"></translation>
+  <translation inputID="O00500" inputPort="0" outputID="O005" outputPort="0"></translation>
+  <translation inputID="O0050000" inputPort="0" outputID="O00500" outputPort="0"></translation>
+  <translation inputID="O0110051" inputPort="5" outputID="O00500" outputPort="1"></translation>
+  <translation inputID="O0110002" inputPort="0" outputID="O00500" outputPort="2"></translation>
+  <translation inputID="O00600" inputPort="0" outputID="O006" outputPort="0"></translation>
+  <translation inputID="O0060000" inputPort="0" outputID="O00600" outputPort="0"></translation>
+  <translation inputID="O006000000" inputPort="0" outputID="O0060000" outputPort="0"></translation>
+  <translation inputID="O00600000000" inputPort="0" outputID="O006000000" outputPort="0"></translation>
+  <translation inputID="O006000001" inputPort="0" outputID="O0060000" outputPort="1"></translation>
+  <translation inputID="O0110002" inputPort="0" outputID="O0060000" outputPort="2"></translation>
+  <translation inputID="O0110000" inputPort="0" outputID="O0060001" outputPort="0"></translation>
+  <translation inputID="O0110051" inputPort="0" outputID="O0060001" outputPort="1"></translation>
+  <translation inputID="O0110002" inputPort="0" outputID="O0060001" outputPort="2"></translation>
+  <translation inputID="O0060001" inputPort="0" outputID="O00600" outputPort="1"></translation>
+  <translation inputID="O00700" inputPort="0" outputID="O007" outputPort="0"></translation>
+  <translation inputID="O0110000" inputPort="0" outputID="O00700" outputPort="0"></translation>
+  <translation inputID="O0110051" inputPort="1" outputID="O00700" outputPort="1"></translation>
+  <translation inputID="O0110002" inputPort="0" outputID="O00700" outputPort="2"></translation>
+  <translation inputID="O00800" inputPort="0" outputID="O008" outputPort="0"></translation>
+  <translation inputID="O0110000" inputPort="0" outputID="O00800" outputPort="0"></translation>
+  <translation inputID="O0110051" inputPort="2" outputID="O00800" outputPort="1"></translation>
+  <translation inputID="O0110002" inputPort="0" outputID="O00800" outputPort="2"></translation>
+  <translation inputID="O00900" inputPort="0" outputID="O009" outputPort="0"></translation>
+  <translation inputID="O0110000" inputPort="0" outputID="O00900" outputPort="0"></translation>
+  <translation inputID="O0110051" inputPort="3" outputID="O00900" outputPort="1"></translation>
+  <translation inputID="O0110002" inputPort="0" outputID="O00900" outputPort="2"></translation>
+  <translation inputID="O01000" inputPort="0" outputID="O010" outputPort="0"></translation>
+  <translation inputID="O0110000" inputPort="0" outputID="O01000" outputPort="0"></translation>
+  <translation inputID="O0110051" inputPort="4" outputID="O01000" outputPort="1"></translation>
+  <translation inputID="O0110002" inputPort="0" outputID="O01000" outputPort="2"></translation>
+  <translation inputID="O01100" inputPort="0" outputID="O011" outputPort="0"></translation>
+  <translation inputID="O0110000" inputPort="0" outputID="O01100" outputPort="0"></translation>
+  <translation inputID="O0110051" inputPort="5" outputID="O01100" outputPort="1"></translation>
+  <translation inputID="O0110002" inputPort="0" outputID="O01100" outputPort="2"></translation>
+  <output endID="0" typeRef="#string" path="" required="false"></output>
+  <output endID="1" typeRef="#string" path="" required="false"></output>
+  <output endID="2" typeRef="#string" path="" required="false"></output>
+  <output endID="3" typeRef="#string" path="" required="false"></output>
+  <output endID="4" typeRef="#string" path="" required="false"></output>
+  <output endID="5" typeRef="#string" path="" required="false"></output>
+  <output endID="6" typeRef="#string" path="" required="false"></output>
+  <output endID="7" typeRef="#string" path="" required="false"></output>
+  <output endID="8" typeRef="#string" path="" required="false"></output>
+  <output endID="9" typeRef="#string" path="" required="false"></output>
+  <output endID="10" typeRef="#string" path="" required="false"></output>
+  <output endID="11" typeRef="#string" path="" required="false"></output>
+  <localTransform id="IsClearingSystem_O000000000000000">
+    <transform IOversion="3.1.0" readOnly="false" encrypted="false" targetNamespace="http://www.c24.biz/IO/Transforms/Common" processingOrder="Outputs" validateInputs="false" validateOutputs="false" saveLayout="true" name="IsClearingSystem">
+      <input endID="0" modelRef="../SWIFT FIN November 2015 Data Dictionary.dod" typeRef="Data Field Dictionary/Subfields/Party line1" path="" required="true"></input>
+      <contextPath input="false" endID="0" contextRef="" id="O000"></contextPath>
+      <transformMethod name="OR" x="579" y="57" id="O00000"></transformMethod>
+      <transformMethod name="AND" x="379" y="50" id="O0000000"></transformMethod>
+      <transformMethod name="STARTSWITH" x="120" y="44" id="O000000000"></transformMethod>
+      <constant constant="/RT//" id="O00000000001"></constant>
+      <transformMethod name="GREATERTHAN" x="239" y="112" id="O000000001"></transformMethod>
+      <transformMethod name="LENGTH" x="105" y="104" id="O00000000100"></transformMethod>
+      <constant constant="5" id="O00000000101"></constant>
+      <transformMethod name="AND" x="458" y="194" id="O0000001"></transformMethod>
+      <transformMethod name="STARTSWITH" x="100" y="187" id="O000000100"></transformMethod>
+      <constant constant="/" id="O00000010001"></constant>
+      <transformMethod name="NOT" x="330" y="295" id="O000000101"></transformMethod>
+      <transformMethod name="OR" x="226" y="299" id="O00000010100"></transformMethod>
+      <transformMethod name="STARTSWITH" x="98" y="260" id="O0000001010000"></transformMethod>
+      <constant constant="/RT" id="O000000101000001"></constant>
+      <transformMethod name="STARTSWITH" x="100" y="328" id="O0000001010001"></transformMethod>
+      <constant constant="/CH" id="O000000101000101"></constant>
+      <contextPath input="true" endID="0" contextRef="Party Identifier" id="O000000101000100"></contextPath>
+      <translation inputID="O00000" inputPort="0" outputID="O000" outputPort="0"></translation>
+      <translation inputID="O0000000" inputPort="0" outputID="O00000" outputPort="0"></translation>
+      <translation inputID="O000000000" inputPort="0" outputID="O0000000" outputPort="0"></translation>
+      <translation inputID="O000000101000100" inputPort="0" outputID="O000000000" outputPort="0"></translation>
+      <translation inputID="O00000000001" inputPort="0" outputID="O000000000" outputPort="1"></translation>
+      <translation inputID="O00000000100" inputPort="0" outputID="O000000001" outputPort="0"></translation>
+      <translation inputID="O000000101000100" inputPort="0" outputID="O00000000100" outputPort="0"></translation>
+      <translation inputID="O00000000101" inputPort="0" outputID="O000000001" outputPort="1"></translation>
+      <translation inputID="O000000001" inputPort="0" outputID="O0000000" outputPort="1"></translation>
+      <translation inputID="O000000100" inputPort="0" outputID="O0000001" outputPort="0"></translation>
+      <translation inputID="O000000101000100" inputPort="0" outputID="O000000100" outputPort="0"></translation>
+      <translation inputID="O00000010001" inputPort="0" outputID="O000000100" outputPort="1"></translation>
+      <translation inputID="O00000010100" inputPort="0" outputID="O000000101" outputPort="0"></translation>
+      <translation inputID="O0000001010000" inputPort="0" outputID="O00000010100" outputPort="0"></translation>
+      <translation inputID="O000000101000100" inputPort="0" outputID="O0000001010000" outputPort="0"></translation>
+      <translation inputID="O000000101000001" inputPort="0" outputID="O0000001010000" outputPort="1"></translation>
+      <translation inputID="O000000101000100" inputPort="0" outputID="O0000001010001" outputPort="0"></translation>
+      <translation inputID="O000000101000101" inputPort="0" outputID="O0000001010001" outputPort="1"></translation>
+      <translation inputID="O0000001010001" inputPort="0" outputID="O00000010100" outputPort="1"></translation>
+      <translation inputID="O000000101" inputPort="0" outputID="O0000001" outputPort="1"></translation>
+      <translation inputID="O0000001" inputPort="0" outputID="O00000" outputPort="1"></translation>
+      <output endID="0" typeRef="#boolean" path="" required="false"></output>
+    </transform>
+  </localTransform>
+</transform>

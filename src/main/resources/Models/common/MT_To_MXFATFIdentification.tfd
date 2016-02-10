@@ -1,0 +1,195 @@
+<?xml version="1.0" ?>
+<transform IOversion="3.1.0" readOnly="false" encrypted="false" targetNamespace="http://www.c24.biz/IO/Transforms/Common" processingOrder="Outputs" validateInputs="false" validateOutputs="false" saveLayout="true" name="MT_To_MXFATFIdentification.tfd">
+  <input endID="0" modelRef="../SWIFT FIN November 2015 Data Dictionary.dod" typeRef="Data Field Dictionary/Subfields/Party Identifier Format 2" path="" required="true"></input>
+  <input endID="1" modelRef="../SWIFT FIN November 2015 Data Dictionary.dod" typeRef="Data Field Dictionary/Subfields/Name And Address 50F" path="" required="true"></input>
+  <contextPath input="true" endID="1" contextRef="" id="O00200000001010101"></contextPath>
+  <contextPath input="false" endID="0" contextRef="" id="O000"></contextPath>
+  <transformMethod name="IF" type="#string" x="668" y="35" id="O00000"></transformMethod>
+  <transformMethod name="EQUALS" x="348" y="28" id="O0020000000000"></transformMethod>
+  <constant constant="IBEI" id="O002000000000001"></constant>
+  <transformMethod name="CONCAT" x="386" y="103" id="O00200000001"></transformMethod>
+  <transformMethod name="IFEXISTS" type="#string" x="241" y="320" id="O0020000000101"></transformMethod>
+  <transformMethod name="XPATH" type="#string" x="114" y="318" id="O002000000010101"></transformMethod>
+  <constant constant="./NameAndAddressSubfield2[NameAndAddressNumCode=8]/NameAndAddressDetails" id="O00200000001010100"></constant>
+  <constant constant="&quot;&quot;" id="O002000000010102"></constant>
+  <constant constant="null" id="O00200000002"></constant>
+  <contextPath input="false" endID="1" contextRef="" id="O001"></contextPath>
+  <transformMethod name="INSTANCE" x="1095" y="180" id="O00100"></transformMethod>
+  <javaMethodRef refId="parseFATFId_O0010000" x="892" y="200" id="O0020000"></javaMethodRef>
+  <transformMethod name="IF" type="#string" x="735" y="140" id="O002000000"></transformMethod>
+  <transformMethod name="NOT" x="631" y="97" id="O00200000000"></transformMethod>
+  <transformMethod name="OR" x="348" y="189" id="O002000001"></transformMethod>
+  <transformMethod name="OR" x="232" y="164" id="O00200000100"></transformMethod>
+  <transformMethod name="EQUALS" x="102" y="104" id="O0020000010000"></transformMethod>
+  <constant constant="DRLC" id="O002000001000001"></constant>
+  <transformMethod name="EQUALS" x="104" y="160" id="O0020000010001"></transformMethod>
+  <constant constant="CUST" id="O002000001000101"></constant>
+  <transformMethod name="EQUALS" x="108" y="218" id="O00200000101"></transformMethod>
+  <constant constant="EMPL" id="O0020000010101"></constant>
+  <constant constant="2" id="O0010001"></constant>
+  <contextPath input="false" endID="2" contextRef="" id="O002"></contextPath>
+  <transformMethod name="INSTANCE" x="1097" y="323" id="O00200"></transformMethod>
+  <constant constant="1" id="O0020001"></constant>
+  <contextPath input="true" endID="0" contextRef="Party Identifier 27x" id="O0020000000100"></contextPath>
+  <contextPath input="true" endID="0" contextRef="Party Identifier Code" id="O0020000010100"></contextPath>
+  <translation inputID="O00000" inputPort="0" outputID="O000" outputPort="0"></translation>
+  <translation inputID="O0020000000000" inputPort="0" outputID="O00000" outputPort="0"></translation>
+  <translation inputID="O0020000010100" inputPort="0" outputID="O0020000000000" outputPort="0"></translation>
+  <translation inputID="O002000000000001" inputPort="0" outputID="O0020000000000" outputPort="1"></translation>
+  <translation inputID="O0020000000100" inputPort="0" outputID="O00200000001" outputPort="0"></translation>
+  <translation inputID="O002000000010101" inputPort="0" outputID="O0020000000101" outputPort="0"></translation>
+  <translation inputID="O00200000001010100" inputPort="0" outputID="O002000000010101" outputPort="0"></translation>
+  <translation inputID="O00200000001010101" inputPort="0" outputID="O002000000010101" outputPort="1"></translation>
+  <translation inputID="O002000000010101" inputPort="0" outputID="O0020000000101" outputPort="1"></translation>
+  <translation inputID="O002000000010102" inputPort="0" outputID="O0020000000101" outputPort="2"></translation>
+  <translation inputID="O0020000000101" inputPort="0" outputID="O00200000001" outputPort="1"></translation>
+  <translation inputID="O00200000001" inputPort="0" outputID="O00000" outputPort="1"></translation>
+  <translation inputID="O00200000002" inputPort="0" outputID="O00000" outputPort="2"></translation>
+  <translation inputID="O00100" inputPort="0" outputID="O001" outputPort="0"></translation>
+  <translation inputID="O0020000" inputPort="0" outputID="O00100" outputPort="0"></translation>
+  <translation inputID="O002000000" inputPort="0" outputID="O0020000" outputPort="0"></translation>
+  <translation inputID="O00200000000" inputPort="0" outputID="O002000000" outputPort="0"></translation>
+  <translation inputID="O0020000000000" inputPort="0" outputID="O00200000000" outputPort="0"></translation>
+  <translation inputID="O00200000001" inputPort="0" outputID="O002000000" outputPort="1"></translation>
+  <translation inputID="O00200000002" inputPort="0" outputID="O002000000" outputPort="2"></translation>
+  <translation inputID="O00200000100" inputPort="0" outputID="O002000001" outputPort="0"></translation>
+  <translation inputID="O0020000010000" inputPort="0" outputID="O00200000100" outputPort="0"></translation>
+  <translation inputID="O0020000010100" inputPort="0" outputID="O0020000010000" outputPort="0"></translation>
+  <translation inputID="O002000001000001" inputPort="0" outputID="O0020000010000" outputPort="1"></translation>
+  <translation inputID="O0020000010100" inputPort="0" outputID="O0020000010001" outputPort="0"></translation>
+  <translation inputID="O002000001000101" inputPort="0" outputID="O0020000010001" outputPort="1"></translation>
+  <translation inputID="O0020000010001" inputPort="0" outputID="O00200000100" outputPort="1"></translation>
+  <translation inputID="O0020000010100" inputPort="0" outputID="O00200000101" outputPort="0"></translation>
+  <translation inputID="O0020000010101" inputPort="0" outputID="O00200000101" outputPort="1"></translation>
+  <translation inputID="O00200000101" inputPort="0" outputID="O002000001" outputPort="1"></translation>
+  <translation inputID="O002000001" inputPort="0" outputID="O0020000" outputPort="1"></translation>
+  <translation inputID="O0010001" inputPort="0" outputID="O00100" outputPort="1"></translation>
+  <translation inputID="O00200" inputPort="0" outputID="O002" outputPort="0"></translation>
+  <translation inputID="O0020000" inputPort="0" outputID="O00200" outputPort="0"></translation>
+  <translation inputID="O0020001" inputPort="0" outputID="O00200" outputPort="1"></translation>
+  <documentation>
+    <notes>&lt;h3&gt;MT_To_MXFATFIdentification&lt;/h3&gt;
+
+&lt;b&gt;Business description&lt;/b&gt;
+Subfield 1 of an MT field 50F identifies the Ordering Customer in line with FATF Special Recommendation VII by providing either an account number or a unique identification of the customer. This function translates the unique identifications used in the MT to their equivalent MX FATF compliant identifications by:
+&lt;ul&gt;
+&lt;li&gt;checking whether the identification is continued in Subfield 2 of field 50F (use of code “8” in Subfield 2). If so, the identification is completed prior to translation.&lt;/li&gt;
+&lt;li&gt;isolating the code in the identification to determine the MX target element and write the actual identification in the appropriate element.&lt;/li&gt;
+&lt;li&gt;splitting the country or -depending on the type of identification- country with issuer from the identification and write this information in the MX Issuer element.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Note on implementations&lt;/b&gt;: The returned result represented by 3 strings where 1&lt;sup&gt;st&lt;/sup&gt; one is the MXFATF identifier for organization (IBEI case), 2&lt;sup&gt;nd&lt;/sup&gt; - the MXFATF identifier for private party (non IBEI case) and 3&lt;sup&gt;rd&lt;/sup&gt; - Issuer (for CUST, EMPL or DRLC it is Country + Issuer, rest - just Country).
+
+&lt;b&gt;Format&lt;/b&gt;
+&lt;tt&gt;MT_To_MXFATFIdentification(MTPartyIdentifier, MTNameAndAddress ; MXFATFId)&lt;/tt&gt;
+
+&lt;b&gt;Input&lt;/b&gt;
+&lt;tt&gt;MTPartyIdentifier&lt;/tt&gt;: Subfield 1 of field 50F carrying an FATF compliant customer identification
+&lt;tt&gt;MTNameAndAddress&lt;/tt&gt;: Subfield 2 of field 50F carrying an FATF compliant customer name and address or identifications in line with the format description of field 50F (date and place of birth, customer number or national identity number).
+
+&lt;b&gt;Output&lt;/b&gt;
+&lt;tt&gt;MXFATFId&lt;/tt&gt;: the result of this function is directly put into the correct MX element inside the target component typed PartyIdentification8.
+
+&lt;b&gt;Preconditions&lt;/b&gt;
+None.
+
+&lt;b&gt;Formal description&lt;/b&gt;
+&lt;pre&gt;
+/* Check whether the MTPartyIdentifier is continued in MTNameAndAddress on a line starting with “8” */
+/*
+ Basic function ExtractLines extracts the continued information. “8/” must not be repeated so the function is used without
+ continuation string to limit the extraction to a maximum of one line. If “8/” is not found an empty string is returned.
+ MTCode8 is a local variable
+*/
+MTCode8 = ExtractLines(MTNameAndAddress, “8/”)
+/*
+ Combine the MTPartyIdentifier with extract MTCode8 that might be empty. Substring is taken to delete “8/”. MTFullId is a
+ local variable
+*/
+MTFullId = Concatenate(MTPartyIdentifier, Substring(MTCode8, 3))
+/* Split code from identification in MTFullId. MTFATFCode and MTFATFId are local variables */
+MTFATFCode = Substring(MTFullId, 1, 4)
+MTFATFId = Substring(MTFullId, 6)
+/*Split country or country and issuer from the identification. MTCountry, MTIssuer and MTId are local variables */
+IF MTFATFCode = “IBEI”
+    /*
+       Assumption is that the source message is correct.Therefore the IBEI should be in line with length and pattern of
+       the IBEI standard and will be copied in the target “as is”. No country or issuer are extracted as target of the IBEI
+       translation is the OrganisationIdentification component without Issuer element
+    */
+    MTId = MTFATFId
+ELSEIF MTFATFCode = “CUST” OR “EMPL” OR “DRLC”
+    /*
+       Assumption is that the source message is correct. Therefore CUST, EMPL or DRLC should be in line with field 50F
+       format specifications: the code must be followed by a slash, the country code, a slash, the issuer of the
+       identification, a slash and the identification
+    */
+    /* Isolate country and issuer from identification. Restrict identification to maximum 35 characters */
+    MTCountry = Substring(MTFATFId, 1, 2)
+    MTIssuer = ExtractTillPattern(Substring(MTFATFId, 4), “/”)
+    MTId = Substring(ExtractFromPattern(Substring(MTFATFId, 4), “/”), 1, 35)
+ELSE
+    /*
+       Assumption is that the source message is correct. For all other codes, field 50F format specification requires that
+       the code is followed by a slash, the country code, a slash and the identification
+    */
+    /* Isolate country from identification. Restrict identification to maximum 35 characters */
+    MTCountry = Substring(MTFATFId, 1, 2)
+    MTId = Substring(MTFATFId, 4, 35)
+ENDIF
+
+/* Translation to target */
+IF MTFATFCode = “ARNU”
+    Identification.PrivateIdentification.AlienRegistrationNumber = MTId
+ELSEIF MTFATFCode = “CCPT”
+    Identification.PrivateIdentification.PassportNumber = MTId
+ELSEIF MTFATFCode = “CUST”
+    Identification.PrivateIdentification.CustomerNumber = MTId
+ELSEIF MTFATFCode = “DRLC”
+    Identification.PrivateIdentification.DriversLicenseNumber = MTId
+ELSEIF MTFATFCode = “EMPL”
+    Identification.PrivateIdentification.EmployerIdentificationNumber = MTId
+ELSEIF MTFATFCode = “IBEI”
+    Identification.OrganisationIdentification.IBEI = MTId
+ELSEIF MTFATFCode = “NIDN”
+    Identification.PrivateIdentification.IdentityCardNumber = MTId
+ELSEIF MTFATFCode = “SOSE”
+    Identification.PrivateIdentification.SocialSecurityNumber = MTId
+ELSEIF MTFATFCode = “TXID”
+    Identification.PrivateIdentification.TaxIdentificationNumber = MTId
+ENDIF
+
+/* Write country and issuer or country in the same instance of the target PrivateIdentification component */
+IF MTFATFCode = “CUST” OR “EMPL” OR “DRLC”
+    /* Concatenate country with issuer and restrict to maximum 35 characters */
+    Identification.PrivateIdentification.Issuer = Substring(Concatenate(MTCountry, “/”, MTIssuer), 1, 35)
+ELSEIF MTFATFCode NOT = “IBEI”
+    Identification.PrivateIdentification.Issuer = MTCountry
+ENDIF
+&lt;pre&gt;</notes>
+  </documentation>
+  <output endID="0" typeRef="#string" path="" required="false"></output>
+  <output endID="1" typeRef="#string" path="" required="false"></output>
+  <output endID="2" typeRef="#string" path="" required="false"></output>
+  <javaMethod id="parseFATFId_O0010000">
+    <libraryMethod>false</libraryMethod>
+    <methodName>parseFATFId</methodName>
+    <input role="theFATFId" type="#string"></input>
+    <input role="isIssuerPresent" type="#boolean"></input>
+    <output type="#string[]"></output>
+    <code>if (null == theFATFId || 2 &gt; theFATFId.length()) return null;
+final java.util.List result = new java.util.ArrayList();
+result.add(theFATFId.substring(0, 2));
+int pos = theFATFId.indexOf('/', 3);
+if (0 &gt; pos || !isIssuerPresent) pos = 2;
+result.add(theFATFId.substring(0, pos));
+pos++;
+if (theFATFId.length() - pos &gt; 35) {
+    result.add(theFATFId.substring(pos, pos + 35));
+} else {
+    result.add(theFATFId.substring(pos));
+}
+return (String[]) result.toArray(new String[result.size()]);</code>
+  </javaMethod>
+  <transformTestSuite></transformTestSuite>
+</transform>

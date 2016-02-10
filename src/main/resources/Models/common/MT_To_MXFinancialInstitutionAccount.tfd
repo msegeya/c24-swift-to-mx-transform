@@ -1,0 +1,91 @@
+<?xml version="1.0" ?>
+<transform IOversion="3.1.0" readOnly="false" encrypted="false" targetNamespace="http://www.c24.biz/IO/Transforms/Common" processingOrder="Outputs" validateInputs="false" validateOutputs="false" saveLayout="false" name="MT_To_MXFinancialInstitutionAccount.tfd">
+  <input endID="0" modelRef="../SWIFT FIN November 2015 Data Dictionary.dod" typeRef="Data Field Dictionary/Subfields/Party line1" path="" required="false"></input>
+  <contextPath input="true" endID="0" contextRef="Debit\Credit and Party/Debit\Credit Indicator" id="O1100000000100"></contextPath>
+  <contextPath input="true" endID="0" contextRef="Debit\Credit and Party/Party Identifier" id="O110000001"></contextPath>
+  <contextPath input="false" endID="0" contextRef="" id="O0"></contextPath>
+  <globalTransformRef ref="MT_To_MXPartyAccount.tfd" id="O110"></globalTransformRef>
+  <transformMethod name="UNION" id="O11000"></transformMethod>
+  <transformMethod name="IF" type="#string" id="O1100000"></transformMethod>
+  <transformMethod name="OR" id="O110000000"></transformMethod>
+  <transformMethod name="EQUALS" id="O11000000000"></transformMethod>
+  <constant constant="C" id="O1100000000001"></constant>
+  <transformMethod name="EQUALS" id="O11000000001"></transformMethod>
+  <constant constant="D" id="O1100000000101"></constant>
+  <constant constant="null" id="O110000002"></constant>
+  <transformMethod name="IF" type="#string" id="O1100001"></transformMethod>
+  <transformMethod name="STARTSWITH" id="O110000100"></transformMethod>
+  <constant constant="&quot;/CH&quot;" id="O11000010001"></constant>
+  <transformMethod name="SUBSTRING" id="O110000101"></transformMethod>
+  <constant constant="1" id="O11000010101"></constant>
+  <constant constant="-1" id="O11000010102"></constant>
+  <contextPath input="false" endID="1" contextRef="" id="O1"></contextPath>
+  <contextPath input="true" endID="0" contextRef="Party Identifier" id="O110000102"></contextPath>
+  <translation inputID="O110" inputPort="0" outputID="O0" outputPort="0"></translation>
+  <translation inputID="O11000" inputPort="0" outputID="O110" outputPort="0"></translation>
+  <translation inputID="O1100000" inputPort="0" outputID="O11000" outputPort="0"></translation>
+  <translation inputID="O110000000" inputPort="0" outputID="O1100000" outputPort="0"></translation>
+  <translation inputID="O11000000000" inputPort="0" outputID="O110000000" outputPort="0"></translation>
+  <translation inputID="O1100000000100" inputPort="0" outputID="O11000000000" outputPort="0"></translation>
+  <translation inputID="O1100000000001" inputPort="0" outputID="O11000000000" outputPort="1"></translation>
+  <translation inputID="O11000000001" inputPort="0" outputID="O110000000" outputPort="1"></translation>
+  <translation inputID="O1100000000100" inputPort="0" outputID="O11000000001" outputPort="0"></translation>
+  <translation inputID="O1100000000101" inputPort="0" outputID="O11000000001" outputPort="1"></translation>
+  <translation inputID="O110000001" inputPort="0" outputID="O1100000" outputPort="1"></translation>
+  <translation inputID="O110000002" inputPort="0" outputID="O1100000" outputPort="2"></translation>
+  <translation inputID="O1100001" inputPort="0" outputID="O11000" outputPort="1"></translation>
+  <translation inputID="O110000100" inputPort="0" outputID="O1100001" outputPort="0"></translation>
+  <translation inputID="O110000102" inputPort="0" outputID="O110000100" outputPort="0"></translation>
+  <translation inputID="O11000010001" inputPort="0" outputID="O110000100" outputPort="1"></translation>
+  <translation inputID="O110000101" inputPort="0" outputID="O1100001" outputPort="1"></translation>
+  <translation inputID="O110000102" inputPort="0" outputID="O110000101" outputPort="0"></translation>
+  <translation inputID="O11000010101" inputPort="0" outputID="O110000101" outputPort="1"></translation>
+  <translation inputID="O11000010102" inputPort="0" outputID="O110000101" outputPort="2"></translation>
+  <translation inputID="O110000102" inputPort="0" outputID="O1100001" outputPort="2"></translation>
+  <translation inputID="O110" inputPort="1" outputID="O1" outputPort="0"></translation>
+  <documentation>
+    <notes>&lt;h3&gt;MT_To_MXFinancialInstitutionAccount&lt;/h3&gt;
+
+&lt;b&gt;Business description&lt;/b&gt;
+The function translates an MT financial institution account to an MX account by deleting the slash “/”, the double slash
+'//' (in case of a CHIPS Universal Identifier), the debit indicator and slash “/D/” or the credit indicator and slash
+“/C/” and writing the remainder in the appropriate MX account element after checking whether the account is an IBAN.
+
+&lt;b&gt;Format&lt;/b&gt;
+MT_To_MXFinancialInstitutionAccount(MTPartyIdentifier ; MXAccount)
+
+&lt;b&gt;Input&lt;/b&gt;
+MTPartyIdentifier: financial institution account in the MT format [/1!a]/34x ([ ] indicate optionality).
+
+&lt;b&gt;Output&lt;/b&gt;
+MXAccount: the result of this function -an MX account- is immediately put into the correct MX element inside the target
+component typed CashAccount7.
+
+&lt;b&gt;Preconditions&lt;/b&gt;
+None.
+
+&lt;b&gt;Formal description&lt;/b&gt;
+&lt;pre&gt;
+/*
+   Check whether debit/credit indicator or a CHIPS Universal Identifier are present and delete depending on the
+   caseindicator and/or slash or double slash. Account is a local variable
+*/
+IF Substring(MTPartyIdentifier, 1, 3) = “/C/” OR “/D/”
+    Account = Substring(MTPartyIdentifier, 4)
+ELSEIF Substring(MTPartyIdentifier, 1, 4) = “//CH”
+    Account = Substring(MTPartyIdentifier, 3)
+ELSE
+    Account = Substring(MTPartyIdenfier, 2)
+ENDIF
+/* Check whether account is IBAN */
+IF IsIBAN(Account)
+    Identification.IBAN = Account
+ELSE
+    Identification.ProprietaryAccount.Identification = Account
+ENDIF
+&lt;/pre&gt;
+</notes>
+  </documentation>
+  <output endID="0" typeRef="#string" path="" required="false"></output>
+  <output endID="1" typeRef="#string" path="" required="false"></output>
+</transform>
