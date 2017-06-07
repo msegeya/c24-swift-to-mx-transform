@@ -1,9 +1,8 @@
 <?xml version="1.0" ?>
 <transform IOversion="3.1.0" readOnly="false" encrypted="false" targetNamespace="http://www.c24.biz/IO/Transforms/Common" processingOrder="Outputs" validateInputs="false" validateOutputs="false" saveLayout="false" name="MT_To_MXFinancialInstitutionAccount.tfd">
-  <input endID="0" modelRef="../SWIFT FIN November 2015 Data Dictionary.dod" typeRef="Data Field Dictionary/Subfields/Party line1" path="" required="false"></input>
-  <contextPath input="true" endID="0" contextRef="Debit\Credit and Party/Debit\Credit Indicator" id="O1100000000100"></contextPath>
-  <contextPath input="true" endID="0" contextRef="Debit\Credit and Party/Party Identifier" id="O110000001"></contextPath>
+  <input endID="0" modelRef="../SWIFT FIN November 2017 Data Dictionary.dod" typeRef="Data Field Dictionary/Subfields/Party line1" path="" required="false"></input>
   <contextPath input="false" endID="0" contextRef="" id="O0"></contextPath>
+  <contextPath input="false" endID="1" contextRef="" id="O1"></contextPath>
   <globalTransformRef ref="MT_To_MXPartyAccount.tfd" id="O110"></globalTransformRef>
   <transformMethod name="UNION" id="O11000"></transformMethod>
   <transformMethod name="IF" type="#string" id="O1100000"></transformMethod>
@@ -11,7 +10,9 @@
   <transformMethod name="EQUALS" id="O11000000000"></transformMethod>
   <constant constant="C" id="O1100000000001"></constant>
   <transformMethod name="EQUALS" id="O11000000001"></transformMethod>
+  <contextPath input="true" endID="0" contextRef="Debit\Credit and Party/Debit\Credit Indicator" id="O1100000000100"></contextPath>
   <constant constant="D" id="O1100000000101"></constant>
+  <contextPath input="true" endID="0" contextRef="Debit\Credit and Party/Party Identifier" id="O110000001"></contextPath>
   <constant constant="null" id="O110000002"></constant>
   <transformMethod name="IF" type="#string" id="O1100001"></transformMethod>
   <transformMethod name="STARTSWITH" id="O110000100"></transformMethod>
@@ -19,30 +20,29 @@
   <transformMethod name="SUBSTRING" id="O110000101"></transformMethod>
   <constant constant="1" id="O11000010101"></constant>
   <constant constant="-1" id="O11000010102"></constant>
-  <contextPath input="false" endID="1" contextRef="" id="O1"></contextPath>
   <contextPath input="true" endID="0" contextRef="Party Identifier" id="O110000102"></contextPath>
   <translation inputID="O110" inputPort="0" outputID="O0" outputPort="0"></translation>
+  <translation inputID="O110" inputPort="1" outputID="O1" outputPort="0"></translation>
   <translation inputID="O11000" inputPort="0" outputID="O110" outputPort="0"></translation>
   <translation inputID="O1100000" inputPort="0" outputID="O11000" outputPort="0"></translation>
   <translation inputID="O110000000" inputPort="0" outputID="O1100000" outputPort="0"></translation>
   <translation inputID="O11000000000" inputPort="0" outputID="O110000000" outputPort="0"></translation>
   <translation inputID="O1100000000100" inputPort="0" outputID="O11000000000" outputPort="0"></translation>
   <translation inputID="O1100000000001" inputPort="0" outputID="O11000000000" outputPort="1"></translation>
-  <translation inputID="O11000000001" inputPort="0" outputID="O110000000" outputPort="1"></translation>
   <translation inputID="O1100000000100" inputPort="0" outputID="O11000000001" outputPort="0"></translation>
   <translation inputID="O1100000000101" inputPort="0" outputID="O11000000001" outputPort="1"></translation>
+  <translation inputID="O11000000001" inputPort="0" outputID="O110000000" outputPort="1"></translation>
   <translation inputID="O110000001" inputPort="0" outputID="O1100000" outputPort="1"></translation>
   <translation inputID="O110000002" inputPort="0" outputID="O1100000" outputPort="2"></translation>
-  <translation inputID="O1100001" inputPort="0" outputID="O11000" outputPort="1"></translation>
   <translation inputID="O110000100" inputPort="0" outputID="O1100001" outputPort="0"></translation>
   <translation inputID="O110000102" inputPort="0" outputID="O110000100" outputPort="0"></translation>
   <translation inputID="O11000010001" inputPort="0" outputID="O110000100" outputPort="1"></translation>
-  <translation inputID="O110000101" inputPort="0" outputID="O1100001" outputPort="1"></translation>
   <translation inputID="O110000102" inputPort="0" outputID="O110000101" outputPort="0"></translation>
   <translation inputID="O11000010101" inputPort="0" outputID="O110000101" outputPort="1"></translation>
   <translation inputID="O11000010102" inputPort="0" outputID="O110000101" outputPort="2"></translation>
+  <translation inputID="O110000101" inputPort="0" outputID="O1100001" outputPort="1"></translation>
   <translation inputID="O110000102" inputPort="0" outputID="O1100001" outputPort="2"></translation>
-  <translation inputID="O110" inputPort="1" outputID="O1" outputPort="0"></translation>
+  <translation inputID="O1100001" inputPort="0" outputID="O11000" outputPort="1"></translation>
   <documentation>
     <notes>&lt;h3&gt;MT_To_MXFinancialInstitutionAccount&lt;/h3&gt;
 

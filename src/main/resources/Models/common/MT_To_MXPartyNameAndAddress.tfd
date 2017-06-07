@@ -1,21 +1,21 @@
 <?xml version="1.0" ?>
 <transform IOversion="3.1.0" readOnly="false" encrypted="false" targetNamespace="http://www.c24.biz/IO/Transforms/Common" processingOrder="Outputs" validateInputs="false" validateOutputs="false" saveLayout="false" name="MT_To_MXPartyNameAndAddress.tfd">
-  <input endID="0" modelRef="../SWIFT FIN November 2015 Data Dictionary.dod" typeRef="Data Field Dictionary/Subfields/Name and Address" path="" required="true"></input>
-  <contextPath input="true" endID="0" contextRef="" id="O55000"></contextPath>
+  <input endID="0" modelRef="../SWIFT FIN November 2017 Data Dictionary.dod" typeRef="Data Field Dictionary/Subfields/Name and Address" path="" required="true"></input>
   <contextPath input="false" endID="0" contextRef="" id="O0"></contextPath>
-  <globalTransformRef ref="MT_To_MXPostalAddress.tfd" id="O550"></globalTransformRef>
   <contextPath input="false" endID="1" contextRef="" id="O1"></contextPath>
   <contextPath input="false" endID="2" contextRef="" id="O2"></contextPath>
   <contextPath input="false" endID="3" contextRef="" id="O3"></contextPath>
   <contextPath input="false" endID="4" contextRef="" id="O4"></contextPath>
   <contextPath input="false" endID="5" contextRef="" id="O5"></contextPath>
+  <globalTransformRef ref="MT_To_MXPostalAddress.tfd" id="O550"></globalTransformRef>
+  <contextPath input="true" endID="0" contextRef="" id="O55000"></contextPath>
   <translation inputID="O550" inputPort="0" outputID="O0" outputPort="0"></translation>
-  <translation inputID="O55000" inputPort="0" outputID="O550" outputPort="0"></translation>
   <translation inputID="O550" inputPort="1" outputID="O1" outputPort="0"></translation>
   <translation inputID="O550" inputPort="2" outputID="O2" outputPort="0"></translation>
   <translation inputID="O550" inputPort="3" outputID="O3" outputPort="0"></translation>
   <translation inputID="O550" inputPort="4" outputID="O4" outputPort="0"></translation>
   <translation inputID="O550" inputPort="5" outputID="O5" outputPort="0"></translation>
+  <translation inputID="O55000" inputPort="0" outputID="O550" outputPort="0"></translation>
   <documentation>
     <notes>&lt;h3&gt;MT_To_MXPartyNameAndAddress&lt;/h3&gt;
 

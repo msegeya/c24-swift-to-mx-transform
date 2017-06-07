@@ -1,47 +1,50 @@
 <?xml version="1.0" ?>
 <transform IOversion="3.1.0" readOnly="false" encrypted="false" targetNamespace="http://www.c24.biz/IO/Transforms/Common" processingOrder="Outputs" validateInputs="false" validateOutputs="true" saveLayout="true" name="MT_To_MXFATFNameAndAddress-PrvtId-2.tfd">
   <input endID="0" typeRef="#string" path="" required="false"></input>
-  <input endID="1" modelRef="../SWIFT FIN November 2015 Data Dictionary.dod" typeRef="Data Field Dictionary/Subfields/Name And Address 50F" path="" required="true"></input>
-  <contextPath input="true" endID="0" contextRef="" id="O003000000000100010000"></contextPath>
-  <contextPath input="true" endID="1" contextRef="" id="O003000000000101"></contextPath>
+  <input endID="1" modelRef="../SWIFT FIN November 2017 Data Dictionary.dod" typeRef="Data Field Dictionary/Subfields/Name And Address 50F" path="" required="true"></input>
   <contextPath input="false" endID="0" contextRef="" id="O000"></contextPath>
   <transformMethod name="INSTANCE" x="1035" y="49" id="O00000"></transformMethod>
+  <constant constant="2" id="O0000001"></constant>
+  <contextPath input="false" endID="1" contextRef="" id="O001"></contextPath>
+  <transformMethod name="INSTANCE" x="1042" y="143" id="O00100"></transformMethod>
   <javaMethodRef refId="parseFATFId_O0020000" x="837" y="96" id="O0010000"></javaMethodRef>
   <transformMethod name="FIRST" x="679" y="92" id="O001000000"></transformMethod>
   <transformMethod name="XPATH" type="#string" x="560" y="96" id="O00100000000"></transformMethod>
   <constant constant="./NameAndAddressSubfield2[NameAndAddressNumCode=7]/NameAndAddressDetails" id="O0010000000000"></constant>
-  <transformMethod name="IF" model="../SWIFT FIN November 2015 Data Dictionary.dod" type="Data Field Dictionary/Subfields/Name And Address 50F" x="401" y="106" id="O0010000000001"></transformMethod>
-  <transformMethod name="AND" x="294" y="78" id="O001000000000100"></transformMethod>
+  <transformMethod name="IF" model="../SWIFT FIN November 2017 Data Dictionary.dod" type="Data Field Dictionary/Subfields/Name And Address 50F" path="" x="401" y="106" id="O0010000000001"></transformMethod>
+  <transformMethod name="AND" x="294" y="75" id="O001000000000100"></transformMethod>
   <transformMethod name="NOT" x="185" y="30" id="O00100000000010000"></transformMethod>
   <transformMethod name="EQUALS" x="93" y="28" id="O0010000000001000000"></transformMethod>
   <constant constant="NIDN" id="O001000000000100000001"></constant>
-  <transformMethod name="NOT" x="184" y="138" id="O00300000000010000"></transformMethod>
-  <transformMethod name="EQUALS" x="94" y="137" id="O0030000000001000000"></transformMethod>
-  <constant constant="IBEI" id="O003000000000100000001"></constant>
-  <constant constant="null" id="O003000000000102"></constant>
   <constant constant="false" id="O001000001"></constant>
-  <constant constant="2" id="O0000001"></constant>
-  <contextPath input="false" endID="1" contextRef="" id="O001"></contextPath>
-  <transformMethod name="INSTANCE" x="1042" y="143" id="O00100"></transformMethod>
   <constant constant="1" id="O0010001"></constant>
   <contextPath input="false" endID="2" contextRef="" id="O002"></contextPath>
   <transformMethod name="INSTANCE" x="1058" y="244" id="O00200"></transformMethod>
+  <constant constant="2" id="O0020001"></constant>
+  <contextPath input="false" endID="3" contextRef="" id="O003"></contextPath>
+  <transformMethod name="INSTANCE" x="1064" y="380" id="O00300"></transformMethod>
   <javaMethodRef refId="parseFATFId_O0020000" x="847" y="271" id="O0030000"></javaMethodRef>
   <transformMethod name="FIRST" x="685" y="225" id="O003000000"></transformMethod>
   <transformMethod name="XPATH" type="#string" x="568" y="225" id="O00300000000"></transformMethod>
   <constant constant="./NameAndAddressSubfield2[NameAndAddressNumCode=6]/NameAndAddressDetails" id="O0030000000000"></constant>
-  <transformMethod name="IF" model="../SWIFT FIN November 2015 Data Dictionary.dod" type="Data Field Dictionary/Subfields/Name And Address 50F" x="411" y="234" id="O0030000000001"></transformMethod>
+  <transformMethod name="IF" model="../SWIFT FIN November 2017 Data Dictionary.dod" type="Data Field Dictionary/Subfields/Name And Address 50F" path="" x="411" y="234" id="O0030000000001"></transformMethod>
   <transformMethod name="AND" x="299" y="204" id="O003000000000100"></transformMethod>
+  <transformMethod name="NOT" x="184" y="138" id="O00300000000010000"></transformMethod>
+  <transformMethod name="EQUALS" x="94" y="137" id="O0030000000001000000"></transformMethod>
+  <constant constant="IBEI" id="O003000000000100000001"></constant>
   <transformMethod name="NOT" x="179" y="267" id="O00300000000010001"></transformMethod>
   <transformMethod name="EQUALS" x="86" y="270" id="O0030000000001000100"></transformMethod>
+  <contextPath input="true" endID="0" contextRef="" id="O003000000000100010000"></contextPath>
   <constant constant="CUST" id="O003000000000100010001"></constant>
+  <contextPath input="true" endID="1" contextRef="" id="O003000000000101"></contextPath>
+  <constant constant="null" id="O003000000000102"></constant>
   <constant constant="true" id="O003000001"></constant>
-  <constant constant="2" id="O0020001"></constant>
-  <contextPath input="false" endID="3" contextRef="" id="O003"></contextPath>
-  <transformMethod name="INSTANCE" x="1064" y="380" id="O00300"></transformMethod>
   <constant constant="1" id="O0030001"></constant>
   <translation inputID="O00000" inputPort="0" outputID="O000" outputPort="0"></translation>
   <translation inputID="O0010000" inputPort="0" outputID="O00000" outputPort="0"></translation>
+  <translation inputID="O0000001" inputPort="0" outputID="O00000" outputPort="1"></translation>
+  <translation inputID="O00100" inputPort="0" outputID="O001" outputPort="0"></translation>
+  <translation inputID="O0010000" inputPort="0" outputID="O00100" outputPort="0"></translation>
   <translation inputID="O001000000" inputPort="0" outputID="O0010000" outputPort="0"></translation>
   <translation inputID="O00100000000" inputPort="0" outputID="O001000000" outputPort="0"></translation>
   <translation inputID="O0010000000000" inputPort="0" outputID="O00100000000" outputPort="0"></translation>
@@ -50,25 +53,25 @@
   <translation inputID="O0010000000001000000" inputPort="0" outputID="O00100000000010000" outputPort="0"></translation>
   <translation inputID="O003000000000100010000" inputPort="0" outputID="O0010000000001000000" outputPort="0"></translation>
   <translation inputID="O001000000000100000001" inputPort="0" outputID="O0010000000001000000" outputPort="1"></translation>
-  <translation inputID="O0030000000001000000" inputPort="0" outputID="O00300000000010000" outputPort="0"></translation>
-  <translation inputID="O003000000000100010000" inputPort="0" outputID="O0030000000001000000" outputPort="0"></translation>
-  <translation inputID="O003000000000100000001" inputPort="0" outputID="O0030000000001000000" outputPort="1"></translation>
   <translation inputID="O00300000000010000" inputPort="0" outputID="O001000000000100" outputPort="1"></translation>
   <translation inputID="O003000000000101" inputPort="0" outputID="O0010000000001" outputPort="1"></translation>
   <translation inputID="O003000000000102" inputPort="0" outputID="O0010000000001" outputPort="2"></translation>
   <translation inputID="O0010000000001" inputPort="0" outputID="O00100000000" outputPort="1"></translation>
   <translation inputID="O001000001" inputPort="0" outputID="O0010000" outputPort="1"></translation>
-  <translation inputID="O0000001" inputPort="0" outputID="O00000" outputPort="1"></translation>
-  <translation inputID="O00100" inputPort="0" outputID="O001" outputPort="0"></translation>
-  <translation inputID="O0010000" inputPort="0" outputID="O00100" outputPort="0"></translation>
   <translation inputID="O0010001" inputPort="0" outputID="O00100" outputPort="1"></translation>
   <translation inputID="O00200" inputPort="0" outputID="O002" outputPort="0"></translation>
   <translation inputID="O0030000" inputPort="0" outputID="O00200" outputPort="0"></translation>
+  <translation inputID="O0020001" inputPort="0" outputID="O00200" outputPort="1"></translation>
+  <translation inputID="O00300" inputPort="0" outputID="O003" outputPort="0"></translation>
+  <translation inputID="O0030000" inputPort="0" outputID="O00300" outputPort="0"></translation>
   <translation inputID="O003000000" inputPort="0" outputID="O0030000" outputPort="0"></translation>
   <translation inputID="O00300000000" inputPort="0" outputID="O003000000" outputPort="0"></translation>
   <translation inputID="O0030000000000" inputPort="0" outputID="O00300000000" outputPort="0"></translation>
   <translation inputID="O003000000000100" inputPort="0" outputID="O0030000000001" outputPort="0"></translation>
   <translation inputID="O00300000000010000" inputPort="0" outputID="O003000000000100" outputPort="0"></translation>
+  <translation inputID="O0030000000001000000" inputPort="0" outputID="O00300000000010000" outputPort="0"></translation>
+  <translation inputID="O003000000000100010000" inputPort="0" outputID="O0030000000001000000" outputPort="0"></translation>
+  <translation inputID="O003000000000100000001" inputPort="0" outputID="O0030000000001000000" outputPort="1"></translation>
   <translation inputID="O0030000000001000100" inputPort="0" outputID="O00300000000010001" outputPort="0"></translation>
   <translation inputID="O003000000000100010000" inputPort="0" outputID="O0030000000001000100" outputPort="0"></translation>
   <translation inputID="O003000000000100010001" inputPort="0" outputID="O0030000000001000100" outputPort="1"></translation>
@@ -77,9 +80,6 @@
   <translation inputID="O003000000000102" inputPort="0" outputID="O0030000000001" outputPort="2"></translation>
   <translation inputID="O0030000000001" inputPort="0" outputID="O00300000000" outputPort="1"></translation>
   <translation inputID="O003000001" inputPort="0" outputID="O0030000" outputPort="1"></translation>
-  <translation inputID="O0020001" inputPort="0" outputID="O00200" outputPort="1"></translation>
-  <translation inputID="O00300" inputPort="0" outputID="O003" outputPort="0"></translation>
-  <translation inputID="O0030000" inputPort="0" outputID="O00300" outputPort="0"></translation>
   <translation inputID="O0030001" inputPort="0" outputID="O00300" outputPort="1"></translation>
   <documentation>
     <notes>&lt;h3&gt;MT_To_MXFATFNameAndAddress-PrvtId-2&lt;/h3&gt;
@@ -212,5 +212,5 @@ if (theFATFId.length() - pos &gt; 35) {
 }
 return (String[]) result.toArray(new String[result.size()]);</code>
   </javaMethod>
-  <transformTestSuite></transformTestSuite>
+  <transformTestSuite name="C24_Test_Suite"></transformTestSuite>
 </transform>

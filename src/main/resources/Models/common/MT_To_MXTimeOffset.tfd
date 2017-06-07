@@ -1,32 +1,31 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<transform version="0.0.5" validateOutputs="false" validateInputs="false" targetNamespace="http://www.c24.biz/IO/Transforms/Common" readOnly="false" processingOrder="Outputs" encrypted="false" IOversion="3.1.0" name="MT_To_MXTimeOffset.tfd">
-    <input typeRef="#date_generic" required="false" path="" endID="0"/>
-    <input typeRef="#string" required="false" path="" endID="1"/>
-    <input typeRef="#date_generic" required="false" path="" endID="2"/>
-    <transformMethod name="DATETOSTRING" y="29" x="138" id="1"/>
-    <constant constant="HH:mm:00" id="2"/>
-    <transformMethod name="DATETOSTRING" y="323" x="130" id="4"/>
-    <transformMethod name="CONCAT" y="121" x="468" id="5"/>
-    <transformMethod name="CONCAT" y="192" x="330" id="6"/>
-    <constant constant="HH:mm" id="7"/>
-    <contextPath input="true" endID="0" contextRef="" id="3"/>
-    <contextPath input="true" endID="2" contextRef="" id="8"/>
-    <contextPath input="true" endID="1" contextRef="" id="9"/>
-    <transformMethod type="#date_time" name="FROMSTRING" y="127" x="590" id="13"/>
-    <contextPath input="false" endID="0" contextRef="" id="12"/>
-    <translation outputPort="1" outputID="1" inputPort="0" inputID="2"/>
-    <translation outputPort="1" outputID="6" inputPort="0" inputID="4"/>
-    <translation outputPort="1" outputID="5" inputPort="0" inputID="6"/>
-    <translation outputPort="1" outputID="4" inputPort="0" inputID="7"/>
-    <translation outputPort="0" outputID="5" inputPort="0" inputID="1"/>
-    <translation outputPort="0" outputID="1" inputPort="0" inputID="3"/>
-    <translation outputPort="0" outputID="4" inputPort="0" inputID="8"/>
-    <translation outputPort="0" outputID="6" inputPort="0" inputID="9"/>
-    <translation outputPort="0" outputID="13" inputPort="0" inputID="5"/>
-    <translation outputPort="0" outputID="12" inputPort="0" inputID="13"/>
-    <nextId>14</nextId>
-    <documentation>
-        <notes>&lt;h3&gt;MT_To_MXTimeOffset&lt;/h3&gt;
+<?xml version="1.0" ?>
+<transform IOversion="3.1.0" readOnly="false" encrypted="false" targetNamespace="http://www.c24.biz/IO/Transforms/Common" processingOrder="Outputs" validateInputs="false" validateOutputs="false" saveLayout="true" name="MT_To_MXTimeOffset.tfd">
+  <input endID="0" typeRef="#date_generic" path="" required="false"></input>
+  <input endID="1" typeRef="#string" path="" required="false"></input>
+  <input endID="2" typeRef="#date_generic" path="" required="false"></input>
+  <contextPath input="true" endID="0" contextRef="" id="O00000000000"></contextPath>
+  <contextPath input="true" endID="1" contextRef="" id="O00000000100"></contextPath>
+  <contextPath input="true" endID="2" contextRef="" id="O0000000010100"></contextPath>
+  <contextPath input="false" endID="0" contextRef="" id="O000"></contextPath>
+  <transformMethod name="FROMSTRING" type="#date_time" x="590" y="127" id="O00000"></transformMethod>
+  <transformMethod name="CONCAT" x="468" y="121" id="O0000000"></transformMethod>
+  <transformMethod name="DATETOSTRING" x="138" y="29" id="O000000000"></transformMethod>
+  <constant constant="HH:mm:00" id="O00000000001"></constant>
+  <transformMethod name="CONCAT" x="330" y="192" id="O000000001"></transformMethod>
+  <transformMethod name="DATETOSTRING" x="130" y="323" id="O00000000101"></transformMethod>
+  <constant constant="HH:mm" id="O0000000010101"></constant>
+  <translation inputID="O00000" inputPort="0" outputID="O000" outputPort="0"></translation>
+  <translation inputID="O0000000" inputPort="0" outputID="O00000" outputPort="0"></translation>
+  <translation inputID="O000000000" inputPort="0" outputID="O0000000" outputPort="0"></translation>
+  <translation inputID="O00000000000" inputPort="0" outputID="O000000000" outputPort="0"></translation>
+  <translation inputID="O00000000001" inputPort="0" outputID="O000000000" outputPort="1"></translation>
+  <translation inputID="O00000000100" inputPort="0" outputID="O000000001" outputPort="0"></translation>
+  <translation inputID="O0000000010100" inputPort="0" outputID="O00000000101" outputPort="0"></translation>
+  <translation inputID="O0000000010101" inputPort="0" outputID="O00000000101" outputPort="1"></translation>
+  <translation inputID="O00000000101" inputPort="0" outputID="O000000001" outputPort="1"></translation>
+  <translation inputID="O000000001" inputPort="0" outputID="O0000000" outputPort="1"></translation>
+  <documentation>
+    <notes>&lt;h3&gt;MT_To_MXTimeOffset&lt;/h3&gt;
 
 &lt;b&gt;Business description&lt;/b&gt;:
 The function translates an MT time with offset expressed as “HHMM+/-HHMM” to an MX time with offset expressed as “HH:MM:SS+/-HH:MM” by adding the seconds to the time and introducing the “:“pattern to both time and offset.
@@ -56,6 +55,6 @@ MXOffset = MT_To_MXOffset(MTOffset)
 /* Build output string */
 MXTimeOffset = Concatenate(MXTime, MTSign, MXOffset)
 &lt;/tt&gt;</notes>
-    </documentation>
-    <output typeRef="#date_time" required="false" path="" endID="0"/>
+  </documentation>
+  <output endID="0" typeRef="#date_time" path="" required="false"></output>
 </transform>

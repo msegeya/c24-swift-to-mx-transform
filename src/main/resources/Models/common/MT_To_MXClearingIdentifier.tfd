@@ -1,20 +1,20 @@
 <?xml version="1.0" ?>
 <transform IOversion="3.1.0" readOnly="false" encrypted="false" targetNamespace="http://www.c24.biz/IO/Transforms/Common" processingOrder="Outputs" validateInputs="false" validateOutputs="false" saveLayout="true" name="MT_To_MXClearingIdentifier.tfd">
-  <input endID="0" modelRef="../SWIFT FIN November 2015 Data Dictionary.dod" typeRef="Data Field Dictionary/Subfields/Party line1" path="" required="true"></input>
+  <input endID="0" modelRef="../SWIFT FIN November 2017 Data Dictionary.dod" typeRef="Data Field Dictionary/Subfields/Party line1" path="" required="true"></input>
   <constant constant="null" id="0"></constant>
   <contextPath input="false" endID="0" contextRef="" id="O000"></contextPath>
-  <globalTransformRef ref="MT_To_MXClearingIdentifier-simple.tfd" x="200" y="44" id="O00330"></globalTransformRef>
-  <constant constant="false" id="O0033001"></constant>
   <contextPath input="false" endID="1" contextRef="" id="O001"></contextPath>
   <contextPath input="false" endID="2" contextRef="" id="O002"></contextPath>
   <contextPath input="false" endID="3" contextRef="" id="O003"></contextPath>
+  <globalTransformRef ref="MT_To_MXClearingIdentifier-simple.tfd" x="200" y="44" id="O00330"></globalTransformRef>
   <contextPath input="true" endID="0" contextRef="Party Identifier" id="O0033000"></contextPath>
+  <constant constant="false" id="O0033001"></constant>
   <translation inputID="O00330" inputPort="0" outputID="O000" outputPort="0"></translation>
-  <translation inputID="O0033000" inputPort="0" outputID="O00330" outputPort="0"></translation>
-  <translation inputID="O0033001" inputPort="0" outputID="O00330" outputPort="1"></translation>
   <translation inputID="O00330" inputPort="1" outputID="O001" outputPort="0"></translation>
   <translation inputID="O00330" inputPort="2" outputID="O002" outputPort="0"></translation>
   <translation inputID="O00330" inputPort="3" outputID="O003" outputPort="0"></translation>
+  <translation inputID="O0033000" inputPort="0" outputID="O00330" outputPort="0"></translation>
+  <translation inputID="O0033001" inputPort="0" outputID="O00330" outputPort="1"></translation>
   <documentation>
     <notes>&lt;h3&gt;MT_To_MXClearingIdentifier&lt;/h3&gt;
 

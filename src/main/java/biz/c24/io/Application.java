@@ -2,7 +2,7 @@ package biz.c24.io;
 
 import biz.c24.io.api.*;
 import biz.c24.io.api.data.*;
-import biz.c24.io.swift2015.*;
+import biz.c24.io.swift2017.*;
 import java.io.*;
 
 /**

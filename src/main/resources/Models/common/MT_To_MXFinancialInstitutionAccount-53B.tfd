@@ -1,42 +1,43 @@
 <?xml version="1.0" ?>
 <transform IOversion="3.1.0" readOnly="false" encrypted="false" targetNamespace="http://www.c24.biz/IO/Transforms/Common" processingOrder="Outputs" validateInputs="false" validateOutputs="false" saveLayout="true" name="MT_To_MXFinancialInstitutionAccount-53B.tfd">
-  <input endID="0" modelRef="../SWIFT FIN November 2015 Data Dictionary.dod" typeRef="Data Field Dictionary/Subfields/Field 5xB" path="" required="true"></input>
-  <contextPath input="true" endID="0" contextRef="Debit\Credit and Party/Debit\Credit Indicator" id="O00110000000010001"></contextPath>
-  <contextPath input="true" endID="0" contextRef="Debit\Credit and Party/Party Identifier" id="O0011000000101"></contextPath>
-  <contextPath input="true" endID="0" contextRef="Debit\Credt_Party_Location/Debit\Credit and Party/Debit\Credit Indicator" id="O00110000000010000"></contextPath>
-  <contextPath input="true" endID="0" contextRef="Debit\Credt_Party_Location/Debit\Credit and Party/Party Identifier" id="O0011000000100"></contextPath>
+  <input endID="0" modelRef="../SWIFT FIN November 2017 Data Dictionary.dod" typeRef="Data Field Dictionary/Subfields/Field 5xB" path="" required="true"></input>
   <contextPath input="false" endID="0" contextRef="" id="O000"></contextPath>
+  <contextPath input="false" endID="1" contextRef="" id="O001"></contextPath>
   <globalTransformRef ref="MT_To_MXPartyAccount.tfd" x="772" y="135" id="O00110"></globalTransformRef>
   <transformMethod name="UNION" x="615" y="141" id="O0011000"></transformMethod>
   <transformMethod name="IF" type="#string" x="511" y="104" id="O001100000"></transformMethod>
   <transformMethod name="OR" x="393" y="59" id="O00110000000"></transformMethod>
   <transformMethod name="EQUALS" x="272" y="28" id="O0011000000000"></transformMethod>
-  <transformMethod name="UNION" x="83" y="46" id="O001100000000100"></transformMethod>
   <constant constant="C" id="O001100000000001"></constant>
   <transformMethod name="EQUALS" x="267" y="89" id="O0011000000001"></transformMethod>
+  <transformMethod name="UNION" x="83" y="46" id="O001100000000100"></transformMethod>
+  <contextPath input="true" endID="0" contextRef="Debit\Credt_Party_Location/Debit\Credit and Party/Debit\Credit Indicator" id="O00110000000010000"></contextPath>
+  <contextPath input="true" endID="0" contextRef="Debit\Credit and Party/Debit\Credit Indicator" id="O00110000000010001"></contextPath>
   <constant constant="D" id="O001100000000101"></constant>
   <transformMethod name="UNION" x="84" y="116" id="O00110000001"></transformMethod>
+  <contextPath input="true" endID="0" contextRef="Debit\Credt_Party_Location/Debit\Credit and Party/Party Identifier" id="O0011000000100"></contextPath>
+  <contextPath input="true" endID="0" contextRef="Debit\Credit and Party/Party Identifier" id="O0011000000101"></contextPath>
   <constant constant="null" id="O00110000002"></constant>
   <transformMethod name="IF" type="#string" x="511" y="194" id="O001100001"></transformMethod>
   <transformMethod name="STARTSWITH" x="287" y="169" id="O00110000100"></transformMethod>
-  <transformMethod name="UNION" x="90" y="220" id="O00110000102"></transformMethod>
   <constant constant="&quot;/CH&quot;" id="O0011000010001"></constant>
   <transformMethod name="SUBSTRING" x="280" y="239" id="O00110000101"></transformMethod>
   <constant constant="1" id="O0011000010101"></constant>
   <constant constant="-1" id="O0011000010102"></constant>
-  <contextPath input="false" endID="1" contextRef="" id="O001"></contextPath>
-  <contextPath input="true" endID="0" contextRef="Party Identifier" id="O0011000010201"></contextPath>
+  <transformMethod name="UNION" x="90" y="220" id="O00110000102"></transformMethod>
   <contextPath input="true" endID="0" contextRef="Party_Location/Party Identifier" id="O0011000010200"></contextPath>
+  <contextPath input="true" endID="0" contextRef="Party Identifier" id="O0011000010201"></contextPath>
   <translation inputID="O00110" inputPort="0" outputID="O000" outputPort="0"></translation>
+  <translation inputID="O00110" inputPort="1" outputID="O001" outputPort="0"></translation>
   <translation inputID="O0011000" inputPort="0" outputID="O00110" outputPort="0"></translation>
   <translation inputID="O001100000" inputPort="0" outputID="O0011000" outputPort="0"></translation>
   <translation inputID="O00110000000" inputPort="0" outputID="O001100000" outputPort="0"></translation>
   <translation inputID="O0011000000000" inputPort="0" outputID="O00110000000" outputPort="0"></translation>
   <translation inputID="O001100000000100" inputPort="0" outputID="O0011000000000" outputPort="0"></translation>
-  <translation inputID="O00110000000010000" inputPort="0" outputID="O001100000000100" outputPort="0"></translation>
-  <translation inputID="O00110000000010001" inputPort="0" outputID="O001100000000100" outputPort="1"></translation>
   <translation inputID="O001100000000001" inputPort="0" outputID="O0011000000000" outputPort="1"></translation>
   <translation inputID="O001100000000100" inputPort="0" outputID="O0011000000001" outputPort="0"></translation>
+  <translation inputID="O00110000000010000" inputPort="0" outputID="O001100000000100" outputPort="0"></translation>
+  <translation inputID="O00110000000010001" inputPort="0" outputID="O001100000000100" outputPort="1"></translation>
   <translation inputID="O001100000000101" inputPort="0" outputID="O0011000000001" outputPort="1"></translation>
   <translation inputID="O0011000000001" inputPort="0" outputID="O00110000000" outputPort="1"></translation>
   <translation inputID="O0011000000100" inputPort="0" outputID="O00110000001" outputPort="0"></translation>
@@ -45,16 +46,15 @@
   <translation inputID="O00110000002" inputPort="0" outputID="O001100000" outputPort="2"></translation>
   <translation inputID="O00110000100" inputPort="0" outputID="O001100001" outputPort="0"></translation>
   <translation inputID="O00110000102" inputPort="0" outputID="O00110000100" outputPort="0"></translation>
-  <translation inputID="O0011000010200" inputPort="0" outputID="O00110000102" outputPort="0"></translation>
-  <translation inputID="O0011000010201" inputPort="0" outputID="O00110000102" outputPort="1"></translation>
   <translation inputID="O0011000010001" inputPort="0" outputID="O00110000100" outputPort="1"></translation>
   <translation inputID="O00110000102" inputPort="0" outputID="O00110000101" outputPort="0"></translation>
   <translation inputID="O0011000010101" inputPort="0" outputID="O00110000101" outputPort="1"></translation>
   <translation inputID="O0011000010102" inputPort="0" outputID="O00110000101" outputPort="2"></translation>
+  <translation inputID="O0011000010200" inputPort="0" outputID="O00110000102" outputPort="0"></translation>
+  <translation inputID="O0011000010201" inputPort="0" outputID="O00110000102" outputPort="1"></translation>
   <translation inputID="O00110000101" inputPort="0" outputID="O001100001" outputPort="1"></translation>
   <translation inputID="O00110000102" inputPort="0" outputID="O001100001" outputPort="2"></translation>
   <translation inputID="O001100001" inputPort="0" outputID="O0011000" outputPort="1"></translation>
-  <translation inputID="O00110" inputPort="1" outputID="O001" outputPort="0"></translation>
   <documentation>
     <notes>&lt;h3&gt;MT_To_MXFinancialInstitutionAccount&lt;/h3&gt;
 

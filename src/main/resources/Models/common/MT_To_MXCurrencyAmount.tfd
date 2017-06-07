@@ -1,16 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<transform version="0.0.3" validateOutputs="false" validateInputs="false" targetNamespace="http://www.c24.biz/IO/Transforms/Common" readOnly="false" processingOrder="Outputs" encrypted="false" IOversion="3.1.0" name="MT_To_MXCurrencyAmount.tfd">
-    <input typeRef="#string" required="false" path="" endID="0"/>
-    <input typeRef="#number_decimal" required="false" path="" endID="1"/>
-    <contextPath input="true" endID="0" contextRef="" id="5"/>
-    <contextPath input="false" endID="1" contextRef="" id="6"/>
-    <contextPath input="true" endID="1" contextRef="" id="7"/>
-    <contextPath input="false" endID="0" contextRef="" id="8"/>
-    <translation outputPort="0" outputID="6" inputPort="0" inputID="5"/>
-    <translation outputPort="0" outputID="8" inputPort="0" inputID="7"/>
-    <nextId>9</nextId>
-    <documentation>
-        <notes>&lt;h3&gt;MT_To_MXCurrencyAmount&lt;/h3&gt;
+<?xml version="1.0" ?>
+<transform IOversion="3.1.0" readOnly="false" encrypted="false" targetNamespace="http://www.c24.biz/IO/Transforms/Common" processingOrder="Outputs" validateInputs="false" validateOutputs="false" saveLayout="true" name="MT_To_MXCurrencyAmount.tfd">
+  <input endID="0" typeRef="#string" path="" required="false"></input>
+  <input endID="1" typeRef="#number_decimal" path="" required="false"></input>
+  <contextPath input="true" endID="0" contextRef="" id="O00100"></contextPath>
+  <contextPath input="true" endID="1" contextRef="" id="O00000"></contextPath>
+  <contextPath input="false" endID="0" contextRef="" id="O000"></contextPath>
+  <contextPath input="false" endID="1" contextRef="" id="O001"></contextPath>
+  <translation inputID="O00000" inputPort="0" outputID="O000" outputPort="0"></translation>
+  <translation inputID="O00100" inputPort="0" outputID="O001" outputPort="0"></translation>
+  <documentation>
+    <notes>&lt;h3&gt;MT_To_MXCurrencyAmount&lt;/h3&gt;
 
 &lt;b&gt;Business description&lt;/b&gt;
 The function translates an MT currency and MT amount to an MX amount with the currency embedded as an XML attribute. The decimal separator “,” is replaced by a “.”. If the MT amount ends with a “,” then decimal separator is dropped and the translated MX amount will be an integer. Insignificant zeroes -if any- are deleted.
@@ -46,7 +45,7 @@ ENDIF
 /* Define currency attribute */
 MXAmount.XMLAttribute(Ccy) = MTCurrency
 &lt;/pre&gt;</notes>
-    </documentation>
-    <output typeRef="#number_decimal" required="false" path="" endID="0"/>
-    <output typeRef="#string" required="false" path="" endID="1"/>
+  </documentation>
+  <output endID="0" typeRef="#number_decimal" path="" required="false"></output>
+  <output endID="1" typeRef="#string" path="" required="false"></output>
 </transform>

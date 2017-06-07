@@ -1,14 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<transform version="0.0.2" validateOutputs="false" validateInputs="false" targetNamespace="http://www.c24.biz/IO/Transforms/Common" readOnly="false" processingOrder="Outputs" encrypted="false" IOversion="3.1.0" name="MT_To_MXRate.tfd">
-    <input typeRef="#number_decimal" required="false" path="" endID="0"/>
-    <transformMethod name="ABS" y="34" x="196" id="1"/>
-    <contextPath input="true" endID="0" contextRef="" id="2"/>
-    <contextPath input="false" endID="0" contextRef="" id="3"/>
-    <translation outputPort="0" outputID="1" inputPort="0" inputID="2"/>
-    <translation outputPort="0" outputID="3" inputPort="0" inputID="1"/>
-    <nextId>4</nextId>
-    <documentation>
-        <notes>&lt;h3&gt;MT_To_MXRate&lt;/h3&gt;
+<?xml version="1.0" ?>
+<transform IOversion="3.1.0" readOnly="false" encrypted="false" targetNamespace="http://www.c24.biz/IO/Transforms/Common" processingOrder="Outputs" validateInputs="false" validateOutputs="false" saveLayout="true" name="MT_To_MXRate.tfd">
+  <input endID="0" typeRef="#number_decimal" path="" required="false"></input>
+  <contextPath input="true" endID="0" contextRef="" id="O0000000"></contextPath>
+  <contextPath input="false" endID="0" contextRef="" id="O000"></contextPath>
+  <transformMethod name="ABS" x="196" y="34" id="O00000"></transformMethod>
+  <translation inputID="O00000" inputPort="0" outputID="O000" outputPort="0"></translation>
+  <translation inputID="O0000000" inputPort="0" outputID="O00000" outputPort="0"></translation>
+  <documentation>
+    <notes>&lt;h3&gt;MT_To_MXRate&lt;/h3&gt;
 
 &lt;b&gt;Business description&lt;/b&gt;
 The function translates an MT (exchange) rate to an MX (exchange) rate by replacing the decimal separator “,” by a “.”. If the MT rate ends with a “,” then the decimal separator is dropped and the translated MX rate will be an integer. Insignificant zeroes -if any- are deleted.
@@ -41,6 +40,6 @@ ELSE
     MXRate = Rate
 ENDIF
 &lt;/pre&gt;</notes>
-    </documentation>
-    <output typeRef="#number_decimal" required="false" path="" endID="0"/>
+  </documentation>
+  <output endID="0" typeRef="#number_decimal" path="" required="false"></output>
 </transform>

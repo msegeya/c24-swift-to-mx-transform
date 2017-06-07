@@ -1,34 +1,34 @@
 <?xml version="1.0" ?>
 <transform IOversion="3.1.0" readOnly="false" encrypted="false" targetNamespace="http://www.c24.biz/IO/Transforms/Common" processingOrder="Outputs" validateInputs="false" validateOutputs="false" saveLayout="true" name="MT72INS_To_MXAgent.tfd">
-  <input endID="0" modelRef="../SWIFT FIN November 2015 Data Dictionary.dod" typeRef="Data Field Dictionary/Subfields/Narrative 6*35x" path="" required="true"></input>
-  <contextPath input="true" endID="0" contextRef="" id="O10000010000"></contextPath>
+  <input endID="0" modelRef="../SWIFT FIN November 2017 Data Dictionary.dod" typeRef="Data Field Dictionary/Subfields/Narrative 6*35x" path="" required="true"></input>
   <contextPath input="false" endID="0" contextRef="" id="O0"></contextPath>
   <transformMethod name="IF" type="#string" x="606" y="44" id="O000"></transformMethod>
-  <javaMethodRef refId="O000_ref" x="413" y="23" id="O100000000"></javaMethodRef>
-  <globalTransformRef ref="MT72_To_MXText.tfd" x="260" y="54" id="O1000001"></globalTransformRef>
-  <transformMethod name="TOSTRING" x="99" y="22" id="O100000100"></transformMethod>
-  <constant constant="/INS/" id="O100000101"></constant>
-  <constant constant="-6" id="O100000102"></constant>
-  <constant constant="null" id="O1000002"></constant>
   <contextPath input="false" endID="1" contextRef="" id="O1"></contextPath>
   <transformMethod name="SUBSTRING" x="849" y="180" id="O100"></transformMethod>
   <transformMethod name="IF" type="#string" x="688" y="168" id="O10000"></transformMethod>
   <transformMethod name="NOT" x="559" y="107" id="O1000000"></transformMethod>
+  <javaMethodRef refId="O000_ref" x="413" y="23" id="O100000000"></javaMethodRef>
+  <globalTransformRef ref="MT72_To_MXText.tfd" x="260" y="54" id="O1000001"></globalTransformRef>
+  <transformMethod name="TOSTRING" x="99" y="22" id="O100000100"></transformMethod>
+  <contextPath input="true" endID="0" contextRef="" id="O10000010000"></contextPath>
+  <constant constant="/INS/" id="O100000101"></constant>
+  <constant constant="-6" id="O100000102"></constant>
+  <constant constant="null" id="O1000002"></constant>
   <constant constant="0" id="O10001"></constant>
   <constant constant="70" id="O10002"></constant>
   <translation inputID="O000" inputPort="0" outputID="O0" outputPort="0"></translation>
   <translation inputID="O100000000" inputPort="0" outputID="O000" outputPort="0"></translation>
-  <translation inputID="O1000001" inputPort="0" outputID="O100000000" outputPort="0"></translation>
-  <translation inputID="O100000100" inputPort="0" outputID="O1000001" outputPort="0"></translation>
-  <translation inputID="O10000010000" inputPort="0" outputID="O100000100" outputPort="0"></translation>
-  <translation inputID="O100000101" inputPort="0" outputID="O1000001" outputPort="1"></translation>
-  <translation inputID="O100000102" inputPort="0" outputID="O1000001" outputPort="2"></translation>
   <translation inputID="O1000001" inputPort="0" outputID="O000" outputPort="1"></translation>
   <translation inputID="O1000002" inputPort="0" outputID="O000" outputPort="2"></translation>
   <translation inputID="O100" inputPort="0" outputID="O1" outputPort="0"></translation>
   <translation inputID="O10000" inputPort="0" outputID="O100" outputPort="0"></translation>
   <translation inputID="O1000000" inputPort="0" outputID="O10000" outputPort="0"></translation>
   <translation inputID="O100000000" inputPort="0" outputID="O1000000" outputPort="0"></translation>
+  <translation inputID="O1000001" inputPort="0" outputID="O100000000" outputPort="0"></translation>
+  <translation inputID="O100000100" inputPort="0" outputID="O1000001" outputPort="0"></translation>
+  <translation inputID="O10000010000" inputPort="0" outputID="O100000100" outputPort="0"></translation>
+  <translation inputID="O100000101" inputPort="0" outputID="O1000001" outputPort="1"></translation>
+  <translation inputID="O100000102" inputPort="0" outputID="O1000001" outputPort="2"></translation>
   <translation inputID="O1000001" inputPort="0" outputID="O10000" outputPort="1"></translation>
   <translation inputID="O1000002" inputPort="0" outputID="O10000" outputPort="2"></translation>
   <translation inputID="O10001" inputPort="0" outputID="O100" outputPort="1"></translation>

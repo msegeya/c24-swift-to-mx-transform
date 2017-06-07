@@ -1,23 +1,27 @@
 <?xml version="1.0" ?>
 <transform IOversion="3.1.0" readOnly="false" encrypted="false" targetNamespace="http://www.c24.biz/IO/Transforms/Common" processingOrder="Outputs" validateInputs="false" validateOutputs="false" saveLayout="true" name="MT_To_MXFATFIdentification.tfd">
-  <input endID="0" modelRef="../SWIFT FIN November 2015 Data Dictionary.dod" typeRef="Data Field Dictionary/Subfields/Party Identifier Format 2" path="" required="true"></input>
-  <input endID="1" modelRef="../SWIFT FIN November 2015 Data Dictionary.dod" typeRef="Data Field Dictionary/Subfields/Name And Address 50F" path="" required="true"></input>
-  <contextPath input="true" endID="1" contextRef="" id="O00200000001010101"></contextPath>
+  <input endID="0" modelRef="../SWIFT FIN November 2017 Data Dictionary.dod" typeRef="Data Field Dictionary/Subfields/Party Identifier Format 2" path="" required="true"></input>
+  <input endID="1" modelRef="../SWIFT FIN November 2017 Data Dictionary.dod" typeRef="Data Field Dictionary/Subfields/Name And Address 50F" path="" required="true"></input>
   <contextPath input="false" endID="0" contextRef="" id="O000"></contextPath>
   <transformMethod name="IF" type="#string" x="668" y="35" id="O00000"></transformMethod>
-  <transformMethod name="EQUALS" x="348" y="28" id="O0020000000000"></transformMethod>
-  <constant constant="IBEI" id="O002000000000001"></constant>
-  <transformMethod name="CONCAT" x="386" y="103" id="O00200000001"></transformMethod>
-  <transformMethod name="IFEXISTS" type="#string" x="241" y="320" id="O0020000000101"></transformMethod>
-  <transformMethod name="XPATH" type="#string" x="114" y="318" id="O002000000010101"></transformMethod>
-  <constant constant="./NameAndAddressSubfield2[NameAndAddressNumCode=8]/NameAndAddressDetails" id="O00200000001010100"></constant>
-  <constant constant="&quot;&quot;" id="O002000000010102"></constant>
-  <constant constant="null" id="O00200000002"></constant>
   <contextPath input="false" endID="1" contextRef="" id="O001"></contextPath>
   <transformMethod name="INSTANCE" x="1095" y="180" id="O00100"></transformMethod>
+  <constant constant="2" id="O0010001"></constant>
+  <contextPath input="false" endID="2" contextRef="" id="O002"></contextPath>
+  <transformMethod name="INSTANCE" x="1097" y="323" id="O00200"></transformMethod>
   <javaMethodRef refId="parseFATFId_O0010000" x="892" y="200" id="O0020000"></javaMethodRef>
   <transformMethod name="IF" type="#string" x="735" y="140" id="O002000000"></transformMethod>
   <transformMethod name="NOT" x="631" y="97" id="O00200000000"></transformMethod>
+  <transformMethod name="EQUALS" x="348" y="28" id="O0020000000000"></transformMethod>
+  <constant constant="IBEI" id="O002000000000001"></constant>
+  <transformMethod name="CONCAT" x="386" y="103" id="O00200000001"></transformMethod>
+  <contextPath input="true" endID="0" contextRef="Party Identifier 27x" id="O0020000000100"></contextPath>
+  <transformMethod name="IFEXISTS" type="#string" x="241" y="320" id="O0020000000101"></transformMethod>
+  <transformMethod name="XPATH" type="#string" x="114" y="318" id="O002000000010101"></transformMethod>
+  <constant constant="./NameAndAddressSubfield2[NameAndAddressNumCode=8]/NameAndAddressDetails" id="O00200000001010100"></constant>
+  <contextPath input="true" endID="1" contextRef="" id="O00200000001010101"></contextPath>
+  <constant constant="&quot;&quot;" id="O002000000010102"></constant>
+  <constant constant="null" id="O00200000002"></constant>
   <transformMethod name="OR" x="348" y="189" id="O002000001"></transformMethod>
   <transformMethod name="OR" x="232" y="164" id="O00200000100"></transformMethod>
   <transformMethod name="EQUALS" x="102" y="104" id="O0020000010000"></transformMethod>
@@ -25,15 +29,21 @@
   <transformMethod name="EQUALS" x="104" y="160" id="O0020000010001"></transformMethod>
   <constant constant="CUST" id="O002000001000101"></constant>
   <transformMethod name="EQUALS" x="108" y="218" id="O00200000101"></transformMethod>
-  <constant constant="EMPL" id="O0020000010101"></constant>
-  <constant constant="2" id="O0010001"></constant>
-  <contextPath input="false" endID="2" contextRef="" id="O002"></contextPath>
-  <transformMethod name="INSTANCE" x="1097" y="323" id="O00200"></transformMethod>
-  <constant constant="1" id="O0020001"></constant>
-  <contextPath input="true" endID="0" contextRef="Party Identifier 27x" id="O0020000000100"></contextPath>
   <contextPath input="true" endID="0" contextRef="Party Identifier Code" id="O0020000010100"></contextPath>
+  <constant constant="EMPL" id="O0020000010101"></constant>
+  <constant constant="1" id="O0020001"></constant>
   <translation inputID="O00000" inputPort="0" outputID="O000" outputPort="0"></translation>
   <translation inputID="O0020000000000" inputPort="0" outputID="O00000" outputPort="0"></translation>
+  <translation inputID="O00200000001" inputPort="0" outputID="O00000" outputPort="1"></translation>
+  <translation inputID="O00200000002" inputPort="0" outputID="O00000" outputPort="2"></translation>
+  <translation inputID="O00100" inputPort="0" outputID="O001" outputPort="0"></translation>
+  <translation inputID="O0020000" inputPort="0" outputID="O00100" outputPort="0"></translation>
+  <translation inputID="O0010001" inputPort="0" outputID="O00100" outputPort="1"></translation>
+  <translation inputID="O00200" inputPort="0" outputID="O002" outputPort="0"></translation>
+  <translation inputID="O0020000" inputPort="0" outputID="O00200" outputPort="0"></translation>
+  <translation inputID="O002000000" inputPort="0" outputID="O0020000" outputPort="0"></translation>
+  <translation inputID="O00200000000" inputPort="0" outputID="O002000000" outputPort="0"></translation>
+  <translation inputID="O0020000000000" inputPort="0" outputID="O00200000000" outputPort="0"></translation>
   <translation inputID="O0020000010100" inputPort="0" outputID="O0020000000000" outputPort="0"></translation>
   <translation inputID="O002000000000001" inputPort="0" outputID="O0020000000000" outputPort="1"></translation>
   <translation inputID="O0020000000100" inputPort="0" outputID="O00200000001" outputPort="0"></translation>
@@ -43,13 +53,6 @@
   <translation inputID="O002000000010101" inputPort="0" outputID="O0020000000101" outputPort="1"></translation>
   <translation inputID="O002000000010102" inputPort="0" outputID="O0020000000101" outputPort="2"></translation>
   <translation inputID="O0020000000101" inputPort="0" outputID="O00200000001" outputPort="1"></translation>
-  <translation inputID="O00200000001" inputPort="0" outputID="O00000" outputPort="1"></translation>
-  <translation inputID="O00200000002" inputPort="0" outputID="O00000" outputPort="2"></translation>
-  <translation inputID="O00100" inputPort="0" outputID="O001" outputPort="0"></translation>
-  <translation inputID="O0020000" inputPort="0" outputID="O00100" outputPort="0"></translation>
-  <translation inputID="O002000000" inputPort="0" outputID="O0020000" outputPort="0"></translation>
-  <translation inputID="O00200000000" inputPort="0" outputID="O002000000" outputPort="0"></translation>
-  <translation inputID="O0020000000000" inputPort="0" outputID="O00200000000" outputPort="0"></translation>
   <translation inputID="O00200000001" inputPort="0" outputID="O002000000" outputPort="1"></translation>
   <translation inputID="O00200000002" inputPort="0" outputID="O002000000" outputPort="2"></translation>
   <translation inputID="O00200000100" inputPort="0" outputID="O002000001" outputPort="0"></translation>
@@ -63,9 +66,6 @@
   <translation inputID="O0020000010101" inputPort="0" outputID="O00200000101" outputPort="1"></translation>
   <translation inputID="O00200000101" inputPort="0" outputID="O002000001" outputPort="1"></translation>
   <translation inputID="O002000001" inputPort="0" outputID="O0020000" outputPort="1"></translation>
-  <translation inputID="O0010001" inputPort="0" outputID="O00100" outputPort="1"></translation>
-  <translation inputID="O00200" inputPort="0" outputID="O002" outputPort="0"></translation>
-  <translation inputID="O0020000" inputPort="0" outputID="O00200" outputPort="0"></translation>
   <translation inputID="O0020001" inputPort="0" outputID="O00200" outputPort="1"></translation>
   <documentation>
     <notes>&lt;h3&gt;MT_To_MXFATFIdentification&lt;/h3&gt;
@@ -191,5 +191,5 @@ if (theFATFId.length() - pos &gt; 35) {
 }
 return (String[]) result.toArray(new String[result.size()]);</code>
   </javaMethod>
-  <transformTestSuite></transformTestSuite>
+  <transformTestSuite name="C24_Test_Suite"></transformTestSuite>
 </transform>

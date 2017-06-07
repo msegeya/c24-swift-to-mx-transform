@@ -1,34 +1,30 @@
 <?xml version="1.0" ?>
 <transform IOversion="3.1.0" readOnly="false" encrypted="false" targetNamespace="http://www.c24.biz/IO/Transforms/Common" processingOrder="Outputs" validateInputs="false" validateOutputs="false" saveLayout="true" name="MT_To_MXPostalAddress.tfd">
-  <input endID="0" modelRef="../SWIFT FIN November 2015 Data Dictionary.dod" typeRef="Data Field Dictionary/Subfields/Name and Address" path="" required="true"></input>
-  <contextPath input="true" endID="0" contextRef="Line 35x" id="O0050002000000"></contextPath>
+  <input endID="0" modelRef="../SWIFT FIN November 2017 Data Dictionary.dod" typeRef="Data Field Dictionary/Subfields/Name and Address" path="" required="true"></input>
   <contextPath input="false" endID="0" contextRef="" id="O000"></contextPath>
   <transformMethod name="IF" type="#string" x="833" y="71" id="O00000"></transformMethod>
   <transformMethod name="GREATERTHANOREQUAL" x="267" y="28" id="O0000000"></transformMethod>
-  <transformMethod name="SIZE" x="68" y="75" id="O00200000000"></transformMethod>
   <constant constant="1" id="O000000001"></constant>
   <transformMethod name="FIRST" x="262" y="77" id="O0000001"></transformMethod>
-  <constant constant="null" id="O0050001"></constant>
   <contextPath input="false" endID="1" contextRef="" id="O001"></contextPath>
   <transformMethod name="IF" type="#string" x="832" y="179" id="O00100"></transformMethod>
   <transformMethod name="AND" x="679" y="150" id="O0010000"></transformMethod>
   <transformMethod name="GREATERTHANOREQUAL" x="269" y="156" id="O001000000"></transformMethod>
   <constant constant="3" id="O00100000001"></constant>
-  <transformMethod name="EXISTS" x="563" y="311" id="O002000001"></transformMethod>
-  <transformMethod name="INSTANCE" x="447" y="359" id="O00300"></transformMethod>
-  <javaMethodRef refId="parseAddressLine_O0010000010000" x="237" y="403" id="O005000200"></javaMethodRef>
-  <transformMethod name="LAST" x="88" y="402" id="O00500020000"></transformMethod>
-  <constant constant="0" id="O0030001"></constant>
   <transformMethod name="INSTANCE" x="94" y="186" id="O0010001"></transformMethod>
   <constant constant="1" id="O001000101"></constant>
   <contextPath input="false" endID="2" contextRef="" id="O002"></contextPath>
   <transformMethod name="IF" type="#string" x="832" y="275" id="O00200"></transformMethod>
   <transformMethod name="AND" x="677" y="243" id="O0020000"></transformMethod>
   <transformMethod name="EQUALS" x="260" y="254" id="O002000000"></transformMethod>
+  <transformMethod name="SIZE" x="68" y="75" id="O00200000000"></transformMethod>
   <constant constant="4" id="O00200000001"></constant>
+  <transformMethod name="EXISTS" x="563" y="311" id="O002000001"></transformMethod>
   <transformMethod name="INSTANCE" x="97" y="276" id="O0020001"></transformMethod>
   <constant constant="2" id="O002000101"></constant>
   <contextPath input="false" endID="3" contextRef="" id="O003"></contextPath>
+  <transformMethod name="INSTANCE" x="447" y="359" id="O00300"></transformMethod>
+  <constant constant="0" id="O0030001"></constant>
   <contextPath input="false" endID="4" contextRef="" id="O004"></contextPath>
   <transformMethod name="INSTANCE" x="449" y="413" id="O00400"></transformMethod>
   <constant constant="1" id="O0040001"></constant>
@@ -36,13 +32,16 @@
   <transformMethod name="IF" type="#string" x="835" y="458" id="O00500"></transformMethod>
   <transformMethod name="GREATERTHAN" x="713" y="446" id="O0050000"></transformMethod>
   <transformMethod name="LENGTH" x="568" y="445" id="O005000000"></transformMethod>
-  <transformMethod name="INSTANCE" x="450" y="469" id="O0050002"></transformMethod>
-  <constant constant="2" id="O005000201"></constant>
   <constant constant="16" id="O005000001"></constant>
+  <constant constant="null" id="O0050001"></constant>
+  <transformMethod name="INSTANCE" x="450" y="469" id="O0050002"></transformMethod>
+  <javaMethodRef refId="parseAddressLine_O0010000010000" x="237" y="403" id="O005000200"></javaMethodRef>
+  <transformMethod name="LAST" x="88" y="402" id="O00500020000"></transformMethod>
+  <contextPath input="true" endID="0" contextRef="Line 35x" id="O0050002000000"></contextPath>
+  <constant constant="2" id="O005000201"></constant>
   <translation inputID="O00000" inputPort="0" outputID="O000" outputPort="0"></translation>
   <translation inputID="O0000000" inputPort="0" outputID="O00000" outputPort="0"></translation>
   <translation inputID="O00200000000" inputPort="0" outputID="O0000000" outputPort="0"></translation>
-  <translation inputID="O0050002000000" inputPort="0" outputID="O00200000000" outputPort="0"></translation>
   <translation inputID="O000000001" inputPort="0" outputID="O0000000" outputPort="1"></translation>
   <translation inputID="O0050002000000" inputPort="0" outputID="O0000001" outputPort="0"></translation>
   <translation inputID="O0000001" inputPort="0" outputID="O00000" outputPort="1"></translation>
@@ -52,11 +51,6 @@
   <translation inputID="O001000000" inputPort="0" outputID="O0010000" outputPort="0"></translation>
   <translation inputID="O00200000000" inputPort="0" outputID="O001000000" outputPort="0"></translation>
   <translation inputID="O00100000001" inputPort="0" outputID="O001000000" outputPort="1"></translation>
-  <translation inputID="O00300" inputPort="0" outputID="O002000001" outputPort="0"></translation>
-  <translation inputID="O005000200" inputPort="0" outputID="O00300" outputPort="0"></translation>
-  <translation inputID="O00500020000" inputPort="0" outputID="O005000200" outputPort="0"></translation>
-  <translation inputID="O0050002000000" inputPort="0" outputID="O00500020000" outputPort="0"></translation>
-  <translation inputID="O0030001" inputPort="0" outputID="O00300" outputPort="1"></translation>
   <translation inputID="O002000001" inputPort="0" outputID="O0010000" outputPort="1"></translation>
   <translation inputID="O0050002000000" inputPort="0" outputID="O0010001" outputPort="0"></translation>
   <translation inputID="O001000101" inputPort="0" outputID="O0010001" outputPort="1"></translation>
@@ -66,13 +60,17 @@
   <translation inputID="O0020000" inputPort="0" outputID="O00200" outputPort="0"></translation>
   <translation inputID="O002000000" inputPort="0" outputID="O0020000" outputPort="0"></translation>
   <translation inputID="O00200000000" inputPort="0" outputID="O002000000" outputPort="0"></translation>
+  <translation inputID="O0050002000000" inputPort="0" outputID="O00200000000" outputPort="0"></translation>
   <translation inputID="O00200000001" inputPort="0" outputID="O002000000" outputPort="1"></translation>
+  <translation inputID="O00300" inputPort="0" outputID="O002000001" outputPort="0"></translation>
   <translation inputID="O002000001" inputPort="0" outputID="O0020000" outputPort="1"></translation>
   <translation inputID="O0050002000000" inputPort="0" outputID="O0020001" outputPort="0"></translation>
   <translation inputID="O002000101" inputPort="0" outputID="O0020001" outputPort="1"></translation>
   <translation inputID="O0020001" inputPort="0" outputID="O00200" outputPort="1"></translation>
   <translation inputID="O0050001" inputPort="0" outputID="O00200" outputPort="2"></translation>
   <translation inputID="O00300" inputPort="0" outputID="O003" outputPort="0"></translation>
+  <translation inputID="O005000200" inputPort="0" outputID="O00300" outputPort="0"></translation>
+  <translation inputID="O0030001" inputPort="0" outputID="O00300" outputPort="1"></translation>
   <translation inputID="O00400" inputPort="0" outputID="O004" outputPort="0"></translation>
   <translation inputID="O005000200" inputPort="0" outputID="O00400" outputPort="0"></translation>
   <translation inputID="O0040001" inputPort="0" outputID="O00400" outputPort="1"></translation>
@@ -80,9 +78,11 @@
   <translation inputID="O0050000" inputPort="0" outputID="O00500" outputPort="0"></translation>
   <translation inputID="O005000000" inputPort="0" outputID="O0050000" outputPort="0"></translation>
   <translation inputID="O0050002" inputPort="0" outputID="O005000000" outputPort="0"></translation>
-  <translation inputID="O005000200" inputPort="0" outputID="O0050002" outputPort="0"></translation>
-  <translation inputID="O005000201" inputPort="0" outputID="O0050002" outputPort="1"></translation>
   <translation inputID="O005000001" inputPort="0" outputID="O0050000" outputPort="1"></translation>
+  <translation inputID="O005000200" inputPort="0" outputID="O0050002" outputPort="0"></translation>
+  <translation inputID="O00500020000" inputPort="0" outputID="O005000200" outputPort="0"></translation>
+  <translation inputID="O0050002000000" inputPort="0" outputID="O00500020000" outputPort="0"></translation>
+  <translation inputID="O005000201" inputPort="0" outputID="O0050002" outputPort="1"></translation>
   <translation inputID="O0050001" inputPort="0" outputID="O00500" outputPort="1"></translation>
   <translation inputID="O0050002" inputPort="0" outputID="O00500" outputPort="2"></translation>
   <documentation>

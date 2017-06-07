@@ -1,7 +1,6 @@
 <?xml version="1.0" ?>
 <transform IOversion="3.1.0" readOnly="false" encrypted="false" targetNamespace="http://www.c24.biz/IO/Transforms/Common" processingOrder="Outputs" validateInputs="false" validateOutputs="false" saveLayout="true" name="MT70ROC_To_MX35Text.tfd">
-  <input endID="0" modelRef="../SWIFT FIN November 2015 Data Dictionary.dod" typeRef="Data Field Dictionary/Subfields/Details of Payment" path="" required="true"></input>
-  <contextPath input="true" endID="0" contextRef="Line 35x" id="O000000000010100"></contextPath>
+  <input endID="0" modelRef="../SWIFT FIN November 2017 Data Dictionary.dod" typeRef="Data Field Dictionary/Subfields/Details of Payment" path="" required="true"></input>
   <contextPath input="false" endID="0" contextRef="" id="O000"></contextPath>
   <transformMethod name="SUBSTRING" x="713" y="90" id="O00000"></transformMethod>
   <javaMethodRef refId="extractROC_O0000000" x="509" y="104" id="O0000000"></javaMethodRef>
@@ -15,6 +14,7 @@
   <transformMethod name="INSTANCE" x="105" y="146" id="O0000000000100"></transformMethod>
   <constant constant="2" id="O000000000010001"></constant>
   <transformMethod name="INSTANCE" x="104" y="206" id="O0000000000101"></transformMethod>
+  <contextPath input="true" endID="0" contextRef="Line 35x" id="O000000000010100"></contextPath>
   <constant constant="3" id="O000000000010101"></constant>
   <constant constant="0" id="O0000001"></constant>
   <constant constant="35" id="O0000002"></constant>

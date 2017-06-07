@@ -1,7 +1,6 @@
 <?xml version="1.0" ?>
 <transform IOversion="3.1.0" readOnly="false" encrypted="false" targetNamespace="http://www.c24.biz/IO/Transforms/Common" processingOrder="Outputs" validateInputs="false" validateOutputs="false" saveLayout="true" name="MT_To_MXRemittanceInformation.tfd">
-  <input endID="0" modelRef="../SWIFT FIN November 2015 Data Dictionary.dod" typeRef="Data Field Dictionary/Subfields/Details of Payment" path="" required="true"></input>
-  <contextPath input="true" endID="0" contextRef="Line 35x" id="O00000010100"></contextPath>
+  <input endID="0" modelRef="../SWIFT FIN November 2017 Data Dictionary.dod" typeRef="Data Field Dictionary/Subfields/Details of Payment" path="" required="true"></input>
   <contextPath input="false" endID="0" contextRef="" id="O000"></contextPath>
   <transformMethod name="CONCAT" x="430" y="109" id="O00000"></transformMethod>
   <transformMethod name="CONCAT" x="255" y="52" id="O0000000"></transformMethod>
@@ -13,6 +12,7 @@
   <transformMethod name="INSTANCE" x="101" y="148" id="O000000100"></transformMethod>
   <constant constant="2" id="O00000010001"></constant>
   <transformMethod name="INSTANCE" x="100" y="208" id="O000000101"></transformMethod>
+  <contextPath input="true" endID="0" contextRef="Line 35x" id="O00000010100"></contextPath>
   <constant constant="3" id="O00000010101"></constant>
   <translation inputID="O00000" inputPort="0" outputID="O000" outputPort="0"></translation>
   <translation inputID="O0000000" inputPort="0" outputID="O00000" outputPort="0"></translation>

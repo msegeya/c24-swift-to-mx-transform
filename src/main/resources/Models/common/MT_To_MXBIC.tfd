@@ -1,78 +1,78 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<transform validateOutputs="false" validateInputs="false" targetNamespace="http://www.c24.biz/IO/Transforms/Common" saveLayout="false" readOnly="false" processingOrder="Outputs" encrypted="false" IOversion="3.1.0" name="MT_To_MXBIC.tfd">
-    <input typeRef="#string" required="false" path="" endID="0"/>
-    <input typeRef="#string" required="false" path="" endID="1"/>
-    <contextPath input="true" endID="0" contextRef="" id="I0"/>
-    <contextPath input="true" endID="1" contextRef="" id="I1"/>
-    <contextPath input="false" endID="0" contextRef="" id="O0"/>
-    <transformMethod type="#string" name="IF" id="O00"/>
-    <transformMethod name="NOT" id="O000"/>
-    <transformMethod name="OR" id="O0000"/>
-    <transformMethod name="NOT" id="O00000"/>
-    <transformMethod name="OR" id="O000000"/>
-    <transformMethod name="OR" id="O0000000"/>
-    <transformMethod name="OR" id="O00000000"/>
-    <transformMethod name="STARTSWITH" id="O000000000"/>
-    <constant constant="/FW" id="O0000000001"/>
-    <transformMethod name="STARTSWITH" id="O000000001"/>
-    <constant constant="/RT" id="O0000000011"/>
-    <transformMethod name="OR" id="O00000001"/>
-    <transformMethod name="STARTSWITH" id="O000000010"/>
-    <constant constant="/TA" id="O0000000101"/>
-    <transformMethod name="STARTSWITH" id="O000000011"/>
-    <constant constant="/CH" id="O0000000111"/>
-    <transformMethod name="NOT" id="O0000001"/>
-    <transformMethod name="STARTSWITH" id="O00000010"/>
-    <constant constant="/" id="O000000101"/>
-    <transformMethod name="AND" id="O00001"/>
-    <transformMethod name="STARTSWITH" id="O000010"/>
-    <constant constant="/RT//" id="O0000101"/>
-    <transformMethod name="GREATERTHAN" id="O000011"/>
-    <transformMethod name="LENGTH" id="O0000110"/>
-    <constant constant="5" id="O0000111"/>
-    <constant constant="null" id="O002"/>
-    <contextPath input="false" endID="1" contextRef="" id="O1"/>
-    <transformMethod type="#string" name="IF" id="O10"/>
-    <translation outputPort="0" outputID="O0" inputPort="0" inputID="O00"/>
-    <translation outputPort="0" outputID="O00" inputPort="0" inputID="O000"/>
-    <translation outputPort="0" outputID="O000" inputPort="0" inputID="O0000"/>
-    <translation outputPort="0" outputID="O0000" inputPort="0" inputID="O00000"/>
-    <translation outputPort="0" outputID="O00000" inputPort="0" inputID="O000000"/>
-    <translation outputPort="0" outputID="O000000" inputPort="0" inputID="O0000000"/>
-    <translation outputPort="0" outputID="O0000000" inputPort="0" inputID="O00000000"/>
-    <translation outputPort="0" outputID="O00000000" inputPort="0" inputID="O000000000"/>
-    <translation outputPort="0" outputID="O000000000" inputPort="0" inputID="I0"/>
-    <translation outputPort="1" outputID="O000000000" inputPort="0" inputID="O0000000001"/>
-    <translation outputPort="1" outputID="O00000000" inputPort="0" inputID="O000000001"/>
-    <translation outputPort="0" outputID="O000000001" inputPort="0" inputID="I0"/>
-    <translation outputPort="1" outputID="O000000001" inputPort="0" inputID="O0000000011"/>
-    <translation outputPort="1" outputID="O0000000" inputPort="0" inputID="O00000001"/>
-    <translation outputPort="0" outputID="O00000001" inputPort="0" inputID="O000000010"/>
-    <translation outputPort="0" outputID="O000000010" inputPort="0" inputID="I0"/>
-    <translation outputPort="1" outputID="O000000010" inputPort="0" inputID="O0000000101"/>
-    <translation outputPort="1" outputID="O00000001" inputPort="0" inputID="O000000011"/>
-    <translation outputPort="0" outputID="O000000011" inputPort="0" inputID="I0"/>
-    <translation outputPort="1" outputID="O000000011" inputPort="0" inputID="O0000000111"/>
-    <translation outputPort="1" outputID="O000000" inputPort="0" inputID="O0000001"/>
-    <translation outputPort="0" outputID="O0000001" inputPort="0" inputID="O00000010"/>
-    <translation outputPort="0" outputID="O00000010" inputPort="0" inputID="I0"/>
-    <translation outputPort="1" outputID="O00000010" inputPort="0" inputID="O000000101"/>
-    <translation outputPort="1" outputID="O0000" inputPort="0" inputID="O00001"/>
-    <translation outputPort="0" outputID="O00001" inputPort="0" inputID="O000010"/>
-    <translation outputPort="0" outputID="O000010" inputPort="0" inputID="I0"/>
-    <translation outputPort="1" outputID="O000010" inputPort="0" inputID="O0000101"/>
-    <translation outputPort="1" outputID="O00001" inputPort="0" inputID="O000011"/>
-    <translation outputPort="0" outputID="O000011" inputPort="0" inputID="O0000110"/>
-    <translation outputPort="0" outputID="O0000110" inputPort="0" inputID="I0"/>
-    <translation outputPort="1" outputID="O000011" inputPort="0" inputID="O0000111"/>
-    <translation outputPort="1" outputID="O00" inputPort="0" inputID="I1"/>
-    <translation outputPort="2" outputID="O00" inputPort="0" inputID="O002"/>
-    <translation outputPort="0" outputID="O1" inputPort="0" inputID="O10"/>
-    <translation outputPort="0" outputID="O10" inputPort="0" inputID="O0000"/>
-    <translation outputPort="1" outputID="O10" inputPort="0" inputID="I1"/>
-    <translation outputPort="2" outputID="O10" inputPort="0" inputID="O002"/>
-    <documentation>
-        <notes>&lt;h3&gt;MT_To_MXBIC&lt;/h3&gt;
+<?xml version="1.0" ?>
+<transform IOversion="3.1.0" readOnly="false" encrypted="false" targetNamespace="http://www.c24.biz/IO/Transforms/Common" processingOrder="Outputs" validateInputs="false" validateOutputs="false" saveLayout="false" name="MT_To_MXBIC.tfd">
+  <input endID="0" typeRef="#string" path="" required="false"></input>
+  <input endID="1" typeRef="#string" path="" required="false"></input>
+  <contextPath input="true" endID="0" contextRef="" id="O1000001010000"></contextPath>
+  <contextPath input="true" endID="1" contextRef="" id="O10001"></contextPath>
+  <contextPath input="false" endID="0" contextRef="" id="O0"></contextPath>
+  <transformMethod name="IF" type="#string" id="O000"></transformMethod>
+  <transformMethod name="NOT" id="O00000"></transformMethod>
+  <transformMethod name="OR" id="O10000"></transformMethod>
+  <transformMethod name="NOT" id="O1000000"></transformMethod>
+  <transformMethod name="OR" id="O100000000"></transformMethod>
+  <transformMethod name="OR" id="O10000000000"></transformMethod>
+  <transformMethod name="OR" id="O1000000000000"></transformMethod>
+  <transformMethod name="STARTSWITH" id="O100000000000000"></transformMethod>
+  <constant constant="/FW" id="O10000000000000001"></constant>
+  <transformMethod name="STARTSWITH" id="O100000000000001"></transformMethod>
+  <constant constant="/RT" id="O10000000000000101"></constant>
+  <transformMethod name="OR" id="O1000000000001"></transformMethod>
+  <transformMethod name="STARTSWITH" id="O100000000000100"></transformMethod>
+  <constant constant="/TA" id="O10000000000010001"></constant>
+  <transformMethod name="STARTSWITH" id="O100000000000101"></transformMethod>
+  <constant constant="/CH" id="O10000000000010101"></constant>
+  <transformMethod name="NOT" id="O10000000001"></transformMethod>
+  <transformMethod name="STARTSWITH" id="O1000000000100"></transformMethod>
+  <constant constant="/" id="O100000000010001"></constant>
+  <transformMethod name="AND" id="O1000001"></transformMethod>
+  <transformMethod name="STARTSWITH" id="O100000100"></transformMethod>
+  <constant constant="/RT//" id="O10000010001"></constant>
+  <transformMethod name="GREATERTHAN" id="O100000101"></transformMethod>
+  <transformMethod name="LENGTH" id="O10000010100"></transformMethod>
+  <constant constant="5" id="O10000010101"></constant>
+  <constant constant="null" id="O10002"></constant>
+  <contextPath input="false" endID="1" contextRef="" id="O1"></contextPath>
+  <transformMethod name="IF" type="#string" id="O100"></transformMethod>
+  <translation inputID="O000" inputPort="0" outputID="O0" outputPort="0"></translation>
+  <translation inputID="O00000" inputPort="0" outputID="O000" outputPort="0"></translation>
+  <translation inputID="O10000" inputPort="0" outputID="O00000" outputPort="0"></translation>
+  <translation inputID="O1000000" inputPort="0" outputID="O10000" outputPort="0"></translation>
+  <translation inputID="O100000000" inputPort="0" outputID="O1000000" outputPort="0"></translation>
+  <translation inputID="O10000000000" inputPort="0" outputID="O100000000" outputPort="0"></translation>
+  <translation inputID="O1000000000000" inputPort="0" outputID="O10000000000" outputPort="0"></translation>
+  <translation inputID="O100000000000000" inputPort="0" outputID="O1000000000000" outputPort="0"></translation>
+  <translation inputID="O1000001010000" inputPort="0" outputID="O100000000000000" outputPort="0"></translation>
+  <translation inputID="O10000000000000001" inputPort="0" outputID="O100000000000000" outputPort="1"></translation>
+  <translation inputID="O100000000000001" inputPort="0" outputID="O1000000000000" outputPort="1"></translation>
+  <translation inputID="O1000001010000" inputPort="0" outputID="O100000000000001" outputPort="0"></translation>
+  <translation inputID="O10000000000000101" inputPort="0" outputID="O100000000000001" outputPort="1"></translation>
+  <translation inputID="O1000000000001" inputPort="0" outputID="O10000000000" outputPort="1"></translation>
+  <translation inputID="O100000000000100" inputPort="0" outputID="O1000000000001" outputPort="0"></translation>
+  <translation inputID="O1000001010000" inputPort="0" outputID="O100000000000100" outputPort="0"></translation>
+  <translation inputID="O10000000000010001" inputPort="0" outputID="O100000000000100" outputPort="1"></translation>
+  <translation inputID="O100000000000101" inputPort="0" outputID="O1000000000001" outputPort="1"></translation>
+  <translation inputID="O1000001010000" inputPort="0" outputID="O100000000000101" outputPort="0"></translation>
+  <translation inputID="O10000000000010101" inputPort="0" outputID="O100000000000101" outputPort="1"></translation>
+  <translation inputID="O10000000001" inputPort="0" outputID="O100000000" outputPort="1"></translation>
+  <translation inputID="O1000000000100" inputPort="0" outputID="O10000000001" outputPort="0"></translation>
+  <translation inputID="O1000001010000" inputPort="0" outputID="O1000000000100" outputPort="0"></translation>
+  <translation inputID="O100000000010001" inputPort="0" outputID="O1000000000100" outputPort="1"></translation>
+  <translation inputID="O1000001" inputPort="0" outputID="O10000" outputPort="1"></translation>
+  <translation inputID="O100000100" inputPort="0" outputID="O1000001" outputPort="0"></translation>
+  <translation inputID="O1000001010000" inputPort="0" outputID="O100000100" outputPort="0"></translation>
+  <translation inputID="O10000010001" inputPort="0" outputID="O100000100" outputPort="1"></translation>
+  <translation inputID="O100000101" inputPort="0" outputID="O1000001" outputPort="1"></translation>
+  <translation inputID="O10000010100" inputPort="0" outputID="O100000101" outputPort="0"></translation>
+  <translation inputID="O1000001010000" inputPort="0" outputID="O10000010100" outputPort="0"></translation>
+  <translation inputID="O10000010101" inputPort="0" outputID="O100000101" outputPort="1"></translation>
+  <translation inputID="O10001" inputPort="0" outputID="O000" outputPort="1"></translation>
+  <translation inputID="O10002" inputPort="0" outputID="O000" outputPort="2"></translation>
+  <translation inputID="O100" inputPort="0" outputID="O1" outputPort="0"></translation>
+  <translation inputID="O10000" inputPort="0" outputID="O100" outputPort="0"></translation>
+  <translation inputID="O10001" inputPort="0" outputID="O100" outputPort="1"></translation>
+  <translation inputID="O10002" inputPort="0" outputID="O100" outputPort="2"></translation>
+  <documentation>
+    <notes>&lt;h3&gt;MT_To_MXBIC&lt;/h3&gt;
 
 &lt;b&gt;Business description&lt;/b&gt;
 The function translates an MT BIC to an MX BIC.
@@ -119,7 +119,7 @@ ELSE
 ENDIF
 &lt;/pre&gt;
 </notes>
-    </documentation>
-    <output typeRef="#string" required="false" path="" endID="0"/>
-    <output typeRef="#string" required="false" path="" endID="1"/>
+  </documentation>
+  <output endID="0" typeRef="#string" path="" required="false"></output>
+  <output endID="1" typeRef="#string" path="" required="false"></output>
 </transform>
